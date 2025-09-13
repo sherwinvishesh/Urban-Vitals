@@ -9,6 +9,7 @@
 /frontend/yarn-error.log*
 /frontend/lerna-debug.log*
 /frontend/*.local
+/frontend/package-lock.json
 
 # Python
 /backend/__pycache__/
