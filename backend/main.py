@@ -119,6 +119,68 @@ def load_neighborhoods():
     print(f"Successfully loaded {len(neighborhoods)} neighborhoods")
     return neighborhoods
 
+def load_definitions():
+    """Load definitions/summary data from JSON file"""
+    possible_paths = [
+        Path(__file__).parent / "data-lib" / "summary.json",
+        Path(__file__).parent / "summary.json",
+        Path(__file__).parent / "definitions.json",
+    ]
+    
+    data_path = None
+    for path in possible_paths:
+        if path.exists():
+            data_path = path
+            break
+    
+    if not data_path:
+        print(f"Warning: Could not find definitions file. Looked in: {[str(p) for p in possible_paths]}")
+        return []
+    
+    print(f"Loading definitions from: {data_path}")
+    
+    try:
+        with open(data_path, 'r', encoding='utf-8') as f:
+            definitions_data = json.load(f)
+        return definitions_data
+    except json.JSONDecodeError as e:
+        print(f"Error parsing definitions data: {e}")
+        return []
+    except Exception as e:
+        print(f"Error reading definitions file: {e}")
+        return []
+
+def load_lewc_data():
+    """Load LEWC data from JSON file"""
+    possible_paths = [
+        Path(__file__).parent / "data-lib" / "Tempe-AZ-lewc-data.json",
+        Path(__file__).parent / "Tempe-AZ-lewc-data.json",
+        Path(__file__).parent / "lewc-data.json",
+    ]
+    
+    data_path = None
+    for path in possible_paths:
+        if path.exists():
+            data_path = path
+            break
+    
+    if not data_path:
+        print(f"Warning: Could not find LEWC data file. Looked in: {[str(p) for p in possible_paths]}")
+        return {}
+    
+    print(f"Loading LEWC data from: {data_path}")
+    
+    try:
+        with open(data_path, 'r', encoding='utf-8') as f:
+            lewc_data = json.load(f)
+        return lewc_data
+    except json.JSONDecodeError as e:
+        print(f"Error parsing LEWC data: {e}")
+        return {}
+    except Exception as e:
+        print(f"Error reading LEWC file: {e}")
+        return {}
+
 @app.get("/")
 def read_root():
     return {"message": "Urban Vitals API", "status": "running", "version": "1.0"}
@@ -171,6 +233,62 @@ def get_stats_summary():
         }
         
         return {"success": True, "data": stats}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/api/definitions")
+def get_definitions():
+    """Get all term definitions"""
+    try:
+        definitions = load_definitions()
+        return {"success": True, "data": definitions, "count": len(definitions)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/api/definitions/{term}")
+def get_definition(term: str):
+    """Get definition for a specific term"""
+    try:
+        definitions = load_definitions()
+        
+        # Search for the term (case-insensitive)
+        term_lower = term.lower().replace('_', ' ').replace('-', ' ')
+        
+        for definition in definitions:
+            if isinstance(definition, dict) and 'term' in definition:
+                def_term = definition['term'].lower().replace('_', ' ').replace('-', ' ')
+                if term_lower == def_term or term_lower in def_term:
+                    return {"success": True, "data": definition}
+        
+        raise HTTPException(status_code=404, detail=f"Definition for '{term}' not found")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/api/lewc")
+def get_lewc_data():
+    """Get all LEWC (environmental risk) data"""
+    try:
+        lewc_data = load_lewc_data()
+        return {"success": True, "data": lewc_data, "count": len(lewc_data)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/api/lewc/{neighborhood_name}")
+def get_lewc_neighborhood(neighborhood_name: str):
+    """Get LEWC data for a specific neighborhood"""
+    try:
+        lewc_data = load_lewc_data()
+        
+        # Search for the neighborhood (case-insensitive)
+        for name, data in lewc_data.items():
+            if name.lower() == neighborhood_name.lower():
+                return {"success": True, "data": {name: data}}
+        
+        raise HTTPException(status_code=404, detail=f"LEWC data for '{neighborhood_name}' not found")
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
@@ -254,9 +372,14 @@ def reset_chatbot():
 def health_check():
     try:
         neighborhoods = load_neighborhoods()
+        definitions = load_definitions()
+        lewc_data = load_lewc_data()
+        
         return {
             "status": "healthy",
             "neighborhoods_loaded": len(neighborhoods),
+            "definitions_loaded": len(definitions),
+            "lewc_data_loaded": len(lewc_data),
             "data_file_exists": True,
             "chatbot_available": chatbot_instance is not None
         }
@@ -276,6 +399,10 @@ if __name__ == "__main__":
     print("- GET /api/neighborhoods")
     print("- GET /api/neighborhoods/{id}")
     print("- GET /api/neighborhoods/stats/summary")
+    print("- GET /api/definitions")
+    print("- GET /api/definitions/{term}")
+    print("- GET /api/lewc")
+    print("- GET /api/lewc/{neighborhood_name}")
     print("- POST /api/chatbot/message")
     print("- GET /api/chatbot/status")
     print("- POST /api/chatbot/reset")

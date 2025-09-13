@@ -1,11 +1,4 @@
-# Hackit githb
-github repo for hack mit 
 
-Check out projects section for your tasks
-
-Certainly. Here is an enhanced `Readme.md` for your project's root directory that provides clear, step-by-step commands for running the application.
-
------
 
 # Urban Vitals
 

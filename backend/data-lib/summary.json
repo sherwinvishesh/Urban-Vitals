@@ -1,0 +1,142 @@
+[
+    {
+      "id": 1,
+      "term": "green_score",
+      "description": "An overall score representing the environmental friendliness and sustainability of a neighborhood."
+    },
+    {
+      "id": 2,
+      "term": "air_quality",
+      "description": "A measure of how clean or polluted the air is, with a higher score indicating better quality."
+    },
+    {
+      "id": 3,
+      "term": "greenery_coverage",
+      "description": "The extent of vegetation, parks, and tree canopy within a neighborhood."
+    },
+    {
+      "id": 4,
+      "term": "water_quality",
+      "description": "The quality of the local water supply, considering factors like purity and infrastructure reliability."
+    },
+    {
+      "id": 5,
+      "term": "cleanliness",
+      "description": "The overall cleanliness of a neighborhood, including litter control and waste management."
+    },
+    {
+      "id": 6,
+      "term": "power_grid_reliability",
+      "description": "The stability and reliability of the electricity supply, with fewer outages resulting in a higher score."
+    },
+    {
+      "id": 7,
+      "term": "road_quality",
+      "description": "The condition of the roads, including pavement quality and the presence of potholes."
+    },
+    {
+      "id": 8,
+      "term": "public_safety",
+      "description": "The level of safety in a neighborhood, considering crime rates and police presence."
+    },
+    {
+      "id": 9,
+      "term": "walkability",
+      "description": "How easily residents can walk to amenities like parks, schools, and shops."
+    },
+    {
+      "id": 10,
+      "term": "public_transit_access",
+      "description": "The availability and convenience of public transportation options like buses and light rail."
+    },
+    {
+      "id": 11,
+      "term": "renewable_energy_adoption",
+      "description": "The prevalence of renewable energy sources, such as solar panels, in a neighborhood."
+    },
+    {
+      "id": 12,
+      "term": "recycling_rate",
+      "description": "The rate of recycling participation and effectiveness within a community."
+    },
+    {
+      "id": 13,
+      "term": "local_business_sustainability_practices",
+      "description": "The extent to which local businesses have adopted sustainable and environmentally friendly practices."
+    },
+    {
+      "id": 14,
+      "term": "circular_economy_indicators",
+      "description": "The presence of businesses and initiatives that support a circular economy, such as thrift stores, repair shops, and community gardens."
+    },
+    {
+      "id": 15,
+      "term": "lewc_score",
+      "description": "A score representing the overall environmental risk to a neighborhood, including factors like flash floods, heat island effect, and drought."
+    },
+    {
+      "id": 16,
+      "term": "flash_floods",
+      "description": "The risk of rapid flooding in low-lying areas due to intense rainfall."
+    },
+    {
+      "id": 17,
+      "term": "heat_island_effect",
+      "description": "The phenomenon where urban areas are significantly warmer than surrounding rural areas due to human activities."
+    },
+    {
+      "id": 18,
+      "term": "heavy_rain",
+      "description": "The risk of damage and disruption from intense rainfall events."
+    },
+    {
+      "id": 19,
+      "term": "snow",
+      "description": "The risk of disruption from snowfall, which is very low in Tempe."
+    },
+    {
+      "id": 20,
+      "term": "earthquakes_disruptions",
+      "description": "The risk of disruption from seismic activity."
+    },
+    {
+      "id": 21,
+      "term": "drought_impact",
+      "description": "The potential impact of prolonged periods of low rainfall on a neighborhood."
+    },
+    {
+      "id": 22,
+      "term": "dust_storms_haboob",
+      "description": "The risk of intense dust storms, known as haboobs, which can reduce visibility and air quality."
+    },
+    {
+      "id": 23,
+      "term": "aqi",
+      "description": "Air Quality Index, a measure of air pollution."
+    },
+    {
+      "id": 24,
+      "term": "wmo_code",
+      "description": "World Meteorological Organization weather code, representing different weather conditions."
+    },
+    {
+      "id": 25,
+      "term": "What does the 'green_score' represent and how is it calculated?",
+      "description": "The 'green_score' is an overall score representing the environmental friendliness and sustainability of a location. For residential neighborhoods, it is calculated by averaging the scores of various homeowner-related factors. For business hubs, it is calculated by averaging the scores of the area's environmental factors."
+    },
+    {
+      "id": 26,
+      "term": "How is the 'lewc_score' calculated?",
+      "description": "The 'lewc_score' (Local Environmental Worry Composite) represents the overall environmental risk to a neighborhood. It is calculated by averaging the individual risk scores of all environmental risk factors for a given location, such as flash floods, heat island effect, and drought."
+    },
+    {
+      "id": 27,
+      "term": "What is the 'business_score' and how is it calculated?",
+      "description": "The 'business_score' is a metric specifically for business hubs. It is calculated by averaging the scores of various business-related factors, such as local business sustainability practices and circular economy indicators, to represent the overall sustainability of the business environment."
+    },
+    {
+      "id": 28,
+      "term": "What kind of data is used to determine these scores?",
+      "description": "The scores are determined using a wide range of data points. This includes, but is not limited to, air and water quality, greenery coverage, waste management effectiveness, power grid reliability, public transit access, and specific environmental risks like dust storms and drought impact."
+    }
+  ]

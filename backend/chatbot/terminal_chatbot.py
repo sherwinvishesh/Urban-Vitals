@@ -23,6 +23,7 @@ class UrbanVitalsChatbot:
         # Load static data
         self.refined_data = None
         self.lewc_data = None
+        self.definitions_data = None  # Add definitions data
         self._load_data()
         
     def _initialize_gemini(self):
@@ -47,6 +48,8 @@ class UrbanVitalsChatbot:
             If you cannot answer, simply say, "That's a great question, but I don't have that information right now."
             Keep responses concise and conversational for a web chat interface.
             
+            You have access to comprehensive definitions for all Urban Vitals terms and metrics. Use these definitions to explain concepts clearly.
+            
             When asked about which neighborhood has the highest/lowest scores, analyze ALL neighborhoods in the provided data and give specific names and values.
             When comparing neighborhoods, provide specific numerical comparisons.
             When explaining green scores, break down the components that contribute to the score.
@@ -68,20 +71,21 @@ class UrbanVitalsChatbot:
         """Load neighborhood data from JSON files"""
         refined_path = "backend/data-lib/Tempe-AZ-data.json"
         lewc_path = "backend/data-lib/Tempe-AZ-lewc-data.json"
+        definitions_path = "backend/data-lib/summary.json"  # This is your definitions file
         
         # Try alternative paths if the main ones don't work
         alternative_paths = [
-            ("data-lib/Tempe-AZ-data.json", "data-lib/Tempe-AZ-lewc-data.json"),
-            ("Tempe-AZ-data.json", "Tempe-AZ-lewc-data.json"),
+            ("data-lib/Tempe-AZ-data.json", "data-lib/Tempe-AZ-lewc-data.json", "data-lib/summary.json"),
+            ("Tempe-AZ-data.json", "Tempe-AZ-lewc-data.json", "summary.json"),
         ]
         
-        # Try main paths first
+        # Load refined data
         try:
             with open(refined_path, 'r', encoding='utf-8') as f:
                 self.refined_data = json.load(f)
         except FileNotFoundError:
             # Try alternative paths
-            for alt_refined, _ in alternative_paths:
+            for alt_refined, _, _ in alternative_paths:
                 try:
                     with open(alt_refined, 'r', encoding='utf-8') as f:
                         self.refined_data = json.load(f)
@@ -95,12 +99,13 @@ class UrbanVitalsChatbot:
             print(f"Error parsing refined data: {e}")
             self.refined_data = {}
         
+        # Load LEWC data
         try:
             with open(lewc_path, 'r', encoding='utf-8') as f:
                 self.lewc_data = json.load(f)
         except FileNotFoundError:
             # Try alternative paths
-            for _, alt_lewc in alternative_paths:
+            for _, alt_lewc, _ in alternative_paths:
                 try:
                     with open(alt_lewc, 'r', encoding='utf-8') as f:
                         self.lewc_data = json.load(f)
@@ -113,6 +118,41 @@ class UrbanVitalsChatbot:
         except json.JSONDecodeError as e:
             print(f"Error parsing LEWC data: {e}")
             self.lewc_data = {}
+        
+        # Load definitions data
+        try:
+            with open(definitions_path, 'r', encoding='utf-8') as f:
+                self.definitions_data = json.load(f)
+        except FileNotFoundError:
+            # Try alternative paths
+            for _, _, alt_definitions in alternative_paths:
+                try:
+                    with open(alt_definitions, 'r', encoding='utf-8') as f:
+                        self.definitions_data = json.load(f)
+                    break
+                except FileNotFoundError:
+                    continue
+            else:
+                print(f"Warning: Could not find definitions data file, using empty data")
+                self.definitions_data = []
+        except json.JSONDecodeError as e:
+            print(f"Error parsing definitions data: {e}")
+            self.definitions_data = []
+    
+    def _find_definition(self, term: str) -> Optional[str]:
+        """Find definition for a given term"""
+        if not self.definitions_data:
+            return None
+        
+        term_lower = term.lower().replace('_', ' ').replace('-', ' ')
+        
+        for definition in self.definitions_data:
+            if isinstance(definition, dict) and 'term' in definition and 'description' in definition:
+                def_term = definition['term'].lower().replace('_', ' ').replace('-', ' ')
+                if term_lower in def_term or def_term in term_lower:
+                    return definition['description']
+        
+        return None
     
     def get_response(self, message: str, context: Optional[Dict] = None) -> str:
         """
@@ -188,16 +228,26 @@ class UrbanVitalsChatbot:
     def _get_gemini_response(self, message: str, context: str) -> str:
         """Get response from Gemini AI model"""
         try:
-            if context:
+            # Check if the message is asking for definitions or explanations
+            definition_keywords = ['what is', 'what does', 'define', 'meaning of', 'explain', 'definition']
+            is_definition_query = any(keyword in message.lower() for keyword in definition_keywords)
+            
+            definitions_context = ""
+            if is_definition_query and self.definitions_data:
+                definitions_context = f"""
+Available Term Definitions:
+{json.dumps(self.definitions_data, indent=2)}
+"""
+            
+            if context or definitions_context:
                 prompt = f"""
-Please answer the user's question based on the following JSON data about Tempe neighborhoods.
+Please answer the user's question based on the following data about Tempe neighborhoods.
 When asked about highest/lowest scores, analyze all neighborhoods and provide specific names and values.
 When comparing neighborhoods, give specific numerical comparisons.
 
-Relevant Data:
-```json
-{context}
-```
+{definitions_context}
+
+{f"Relevant Neighborhood Data: {context}" if context else ""}
 
 User Question: {message}
 """
@@ -226,6 +276,11 @@ User Question: {message}
                 return f"Hello! I see you're looking at {selected_neighborhood.get('name', 'this neighborhood')}. What would you like to know about it?"
             return "Hello! I'm your Urban Vitals assistant. What would you like to know about Tempe's neighborhoods?"
         
+        # Handle definition queries
+        definition_keywords = ['what is', 'what does', 'define', 'meaning of', 'explain']
+        if any(keyword in message_lower for keyword in definition_keywords):
+            return self._handle_definition_query(message_lower)
+        
         # Handle highest/lowest green score questions
         if any(phrase in message_lower for phrase in ["highest green score", "best green score", "top green score"]):
             return self._find_highest_green_score(neighborhoods_data)
@@ -249,12 +304,34 @@ User Question: {message}
                 return f"{name} has an air quality score of {air_quality}/10. Higher scores indicate cleaner air with fewer pollutants."
             return "Air quality measures pollution levels and environmental health. Higher scores indicate cleaner air with fewer pollutants."
         
+        # Handle LEWC score questions
+        if any(term in message_lower for term in ["lewc", "environmental risk", "disaster risk"]):
+            definition = self._find_definition("lewc_score")
+            if definition:
+                return f"LEWC Score: {definition}"
+            return "LEWC (Local Environmental Worry Composite) represents the overall environmental risk to a neighborhood, including factors like flash floods, heat island effect, and drought."
+        
         # Handle comparison questions
         if any(term in message_lower for term in ["compare", "versus", "vs", "better than", "worse than"]):
             return "I can help compare neighborhoods based on their Green Scores and individual sustainability metrics. Each area has unique strengths and challenges."
         
         # Default response for unhandled queries
         return "That's a great question, but I don't have that information right now."
+    
+    def _handle_definition_query(self, message_lower: str) -> str:
+        """Handle definition queries using the definitions data"""
+        # Extract potential terms from the query
+        for definition in self.definitions_data:
+            if isinstance(definition, dict) and 'term' in definition:
+                term = definition['term'].lower()
+                term_words = term.replace('_', ' ').replace('-', ' ').split()
+                
+                # Check if any significant words from the term appear in the query
+                if any(word in message_lower for word in term_words if len(word) > 3):
+                    return f"**{definition['term'].replace('_', ' ').title()}**: {definition['description']}"
+        
+        # If no specific term found, return general help
+        return "I can help explain Urban Vitals terms like green_score, air_quality, walkability, lewc_score, and many others. What specific term would you like me to explain?"
     
     def _find_highest_green_score(self, neighborhoods_data: Dict) -> str:
         """Find neighborhood with highest green score"""
@@ -460,6 +537,7 @@ User Question: {message}
                 You are an expert concierge for the city of Tempe, Arizona. Your tone should be friendly, professional, and natural.
                 Keep responses concise and conversational for a web chat interface.
                 When asked about highest/lowest scores, analyze ALL neighborhoods in the provided data and give specific names and values.
+                You have access to comprehensive definitions for all Urban Vitals terms and metrics.
                 """
                 
                 self.chat = self.model.start_chat(history=[
