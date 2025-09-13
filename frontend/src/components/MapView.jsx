@@ -27,6 +27,8 @@ function MapView() {
   // New state for layer toggles
   const [showNeighborhoods, setShowNeighborhoods] = useState(true);
   const [showLEWC, setShowLEWC] = useState(false);
+const [selectedDisasters, setSelectedDisasters] = useState(new Set());
+const [availableDisasters, setAvailableDisasters] = useState([]);
   const [lewcData, setLEWCData] = useState(null);
   const [lewcMarkers, setLEWCMarkers] = useState([]);
 
@@ -68,56 +70,46 @@ function MapView() {
     }
   };
 
-  // Load LEWC data
-  const loadLEWCData = async () => {
-    try {
-      const response = await fetch('/backend/data-lib/Tempe-AZ-lewc-data.json');
-      if (!response.ok) {
-        // Try alternative path
-        const altResponse = await fetch('./Tempe-AZ-lewc-data.json');
-        if (altResponse.ok) {
-          const data = await altResponse.json();
-          setLEWCData(data);
-          return;
-        }
-        throw new Error('LEWC data not found');
-      }
-      const data = await response.json();
+// Load LEWC data
+const loadLEWCData = async () => {
+  try {
+    // Use the API endpoint instead of direct file access
+    const response = await axios.get(`${API_BASE_URL}/api/lewc`);
+    if (response.data.success) {
+      const data = response.data.data;
       setLEWCData(data);
-    } catch (error) {
-      console.warn('Could not load LEWC data:', error);
-      // Use inline data as fallback
-      setLEWCData({
-        "Extreme Heat": {
-          "description": "Dangerously high temperatures, often exacerbated by the urban heat island effect where buildings and pavement absorb and retain heat. This is a primary and frequent risk in Tempe.",
-          "map_color": "#FF4500",
-          "hotspots": [
-            { "lat": 33.4255, "lng": -111.94, "radius_meters": 2500 },
-            { "lat": 33.418, "lng": -111.9265, "radius_meters": 2200 },
-            { "lat": 33.458, "lng": -111.975, "radius_meters": 1800 },
-            { "lat": 33.3785, "lng": -111.964, "radius_meters": 1500 }
-          ]
-        },
-        "Flash Floods": {
-          "description": "Rapid flooding of low-lying areas, washes, and streets caused by intense rainfall from monsoon storms. The Salt River/Tempe Town Lake area is particularly susceptible.",
-          "map_color": "#0000FF",
-          "hotspots": [
-            { "lat": 33.433, "lng": -111.939, "radius_meters": 2000 },
-            { "lat": 33.414, "lng": -111.941, "radius_meters": 1200 },
-            { "lat": 33.378, "lng": -111.962, "radius_meters": 1000 }
-          ]
-        },
-        "Wildfire": {
-          "description": "Risk of fires, especially in brush areas near city limits like Papago Park or South Mountain, particularly during dry and windy conditions.",
-          "map_color": "#FF0000",
-          "hotspots": [
-            { "lat": 33.456, "lng": -111.968, "radius_meters": 7000 },
-            { "lat": 33.349, "lng": -111.975, "radius_meters": 8000 }
-          ]
-        }
-      });
+      
+      // Extract available disasters from the loaded data
+      const disasters = Object.keys(data).map(disasterType => ({
+        id: disasterType.toLowerCase().replace(/\s+/g, '_').replace(/[()]/g, ''),
+        name: disasterType,
+        description: data[disasterType].description,
+        color: data[disasterType].map_color,
+        hasHotspots: data[disasterType].hotspots && data[disasterType].hotspots.length > 0
+      }));
+      setAvailableDisasters(disasters);
+      
+      console.log('LEWC data loaded:', data);
+      console.log('Available disasters:', disasters);
+    } else {
+      throw new Error('Failed to load LEWC data from API');
     }
-  };
+  } catch (error) {
+    console.warn('Could not load LEWC data:', error);
+    // Fallback disasters list
+    setAvailableDisasters([
+      { id: 'extreme_heat', name: 'Extreme Heat', description: 'Dangerously high temperatures', color: '#FF4500', hasHotspots: true },
+      { id: 'flash_floods', name: 'Flash Floods', description: 'Rapid flooding of low-lying areas', color: '#0000FF', hasHotspots: true },
+      { id: 'wildfire', name: 'Wildfire', description: 'Risk of fires in brush areas', color: '#FF0000', hasHotspots: true },
+      { id: 'drought', name: 'Drought', description: 'Prolonged period of low rainfall', color: '#FFA500', hasHotspots: true },
+      { id: 'dust_storms_haboob', name: 'Dust Storms (Haboob)', description: 'Intense dust storms reducing visibility', color: '#8B4513', hasHotspots: true },
+      { id: 'severe_thunderstorm', name: 'Severe Thunderstorm', description: 'Storms with strong winds and lightning', color: '#4B0082', hasHotspots: true },
+      { id: 'earthquake', name: 'Earthquake', description: 'Minor seismic activity possible', color: '#A0522D', hasHotspots: false },
+      { id: 'tornado', name: 'Tornado', description: 'Rare but possible tornadoes', color: '#808080', hasHotspots: false },
+      { id: 'cyclone_remnant', name: 'Cyclone (Remnant)', description: 'Remnants of Pacific hurricanes', color: '#2E8B57', hasHotspots: false }
+    ]);
+  }
+};
 
   // Toggle expanded state for score items
   const toggleExpanded = (key) => {
@@ -130,69 +122,75 @@ function MapView() {
     setExpandedItems(newExpanded);
   };
 
-  // Add LEWC overlays to map
-  const addLEWCOverlays = () => {
-    if (!map.current || !lewcData || !showLEWC) return;
+// Add LEWC overlays to map
+const addLEWCOverlays = () => {
+  if (!map.current || !lewcData || selectedDisasters.size === 0) return;
 
-    // Remove existing LEWC markers
-    lewcMarkers.forEach(marker => marker.remove());
-    setLEWCMarkers([]);
+  // Remove existing LEWC markers
+  lewcMarkers.forEach(marker => marker.remove());
+  setLEWCMarkers([]);
 
-    const newMarkers = [];
+  const newMarkers = [];
 
-    Object.entries(lewcData).forEach(([disasterType, data]) => {
-      if (!data.hotspots) return;
+  // Only show selected disasters
+  Object.entries(lewcData).forEach(([disasterType, data]) => {
+    const disasterId = disasterType.toLowerCase().replace(/\s+/g, '_');
+    
+    // Check if this disaster type is selected
+    if (!selectedDisasters.has(disasterId)) return;
+    
+    // Skip disasters without hotspots
+    if (!data.hotspots || data.hotspots.length === 0) return;
 
-      data.hotspots.forEach((hotspot, index) => {
-        // Create circle overlay
-        const canvas = document.createElement('canvas');
-        const size = Math.max(40, Math.min(100, hotspot.radius_meters / 50));
-        canvas.width = size;
-        canvas.height = size;
-        const ctx = canvas.getContext('2d');
+    data.hotspots.forEach((hotspot, index) => {
+      // Create circle overlay
+      const canvas = document.createElement('canvas');
+      const size = Math.max(40, Math.min(100, hotspot.radius_meters / 50));
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
 
-        // Draw circle
-        ctx.beginPath();
-        ctx.arc(size / 2, size / 2, size / 2 - 2, 0, 2 * Math.PI);
-        ctx.fillStyle = data.map_color + '40'; // Add transparency
-        ctx.fill();
-        ctx.strokeStyle = data.map_color;
-        ctx.lineWidth = 2;
-        ctx.stroke();
+      // Draw circle
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size / 2 - 2, 0, 2 * Math.PI);
+      ctx.fillStyle = data.map_color + '40'; // Add transparency
+      ctx.fill();
+      ctx.strokeStyle = data.map_color;
+      ctx.lineWidth = 2;
+      ctx.stroke();
 
-        // Create marker element
-        const el = document.createElement('div');
-        el.appendChild(canvas);
-        el.style.cursor = 'pointer';
-        el.className = 'lewc-marker';
+      // Create marker element
+      const el = document.createElement('div');
+      el.appendChild(canvas);
+      el.style.cursor = 'pointer';
+      el.className = 'lewc-marker';
 
-        // Create popup content
-        const popupContent = `
-          <div class="lewc-popup">
-            <h3 style="margin: 0 0 8px 0; color: ${data.map_color};">${disasterType}</h3>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.4;">${data.description}</p>
-            <div style="margin-top: 8px; font-size: 0.8rem; opacity: 0.8;">
-              Risk radius: ~${(hotspot.radius_meters / 1000).toFixed(1)} km
-            </div>
+      // Create popup content
+      const popupContent = `
+        <div class="lewc-popup">
+          <h3 style="margin: 0 0 8px 0; color: ${data.map_color};">${disasterType}</h3>
+          <p style="margin: 0; font-size: 0.9rem; line-height: 1.4;">${data.description}</p>
+          <div style="margin-top: 8px; font-size: 0.8rem; opacity: 0.8;">
+            Risk radius: ~${(hotspot.radius_meters / 1000).toFixed(1)} km
           </div>
-        `;
+        </div>
+      `;
 
-        // Create marker
-        const marker = new mapboxgl.Marker(el)
-          .setLngLat([hotspot.lng, hotspot.lat])
-          .setPopup(new mapboxgl.Popup({ 
-            offset: 25,
-            className: 'lewc-popup-container'
-          }).setHTML(popupContent))
-          .addTo(map.current);
+      // Create marker
+      const marker = new mapboxgl.Marker(el)
+        .setLngLat([hotspot.lng, hotspot.lat])
+        .setPopup(new mapboxgl.Popup({ 
+          offset: 25,
+          className: 'lewc-popup-container'
+        }).setHTML(popupContent))
+        .addTo(map.current);
 
-        newMarkers.push(marker);
-      });
+      newMarkers.push(marker);
     });
+  });
 
-    setLEWCMarkers(newMarkers);
-  };
-
+  setLEWCMarkers(newMarkers);
+};
   // Remove LEWC overlays
   const removeLEWCOverlays = () => {
     lewcMarkers.forEach(marker => marker.remove());
@@ -208,13 +206,13 @@ function MapView() {
   };
 
   // Handle layer toggle changes
-  useEffect(() => {
-    if (showLEWC) {
-      addLEWCOverlays();
-    } else {
-      removeLEWCOverlays();
-    }
-  }, [showLEWC, lewcData]);
+useEffect(() => {
+  if (showLEWC && selectedDisasters.size > 0) {
+    addLEWCOverlays();
+  } else {
+    removeLEWCOverlays();
+  }
+}, [showLEWC, selectedDisasters, lewcData]);
 
   useEffect(() => {
     toggleNeighborhoodMarkers(showNeighborhoods);
@@ -441,31 +439,95 @@ function MapView() {
         <div ref={mapContainer} className="map-viewport" />
         
         {/* Layer Controls */}
-        <div className="layer-controls">
-          <h4>Map Layers</h4>
-          <div className="layer-toggle">
-            <label className="toggle-label">
-              <input 
-                type="checkbox" 
-                checked={showNeighborhoods}
-                onChange={(e) => setShowNeighborhoods(e.target.checked)}
+<div className="layer-controls">
+  <h4>Map Layers</h4>
+  <div className="layer-toggle">
+    <label className="toggle-label">
+      <input 
+        type="checkbox" 
+        checked={showNeighborhoods}
+        onChange={(e) => setShowNeighborhoods(e.target.checked)}
+      />
+      <span className="toggle-slider"></span>
+      Neighborhoods
+    </label>
+  </div>
+  <div className="layer-toggle">
+    <label className="toggle-label">
+      <input 
+        type="checkbox" 
+        checked={showLEWC}
+        onChange={(e) => {
+          setShowLEWC(e.target.checked);
+          if (!e.target.checked) {
+            setSelectedDisasters(new Set());
+          }
+        }}
+      />
+      <span className="toggle-slider"></span>
+      LEWC (Disaster Risk)
+    </label>
+  </div>
+  {/* Disaster Selection Panel */}
+  {showLEWC && (
+    <div className="disaster-selection-panel">
+      <h5>Select Disasters:</h5>
+      <div className="disaster-checkboxes">
+        {availableDisasters.map((disaster) => (
+          <div key={disaster.id} className="disaster-checkbox-item">
+            <label className="disaster-checkbox-label">
+              <input
+                type="checkbox"
+                checked={selectedDisasters.has(disaster.id)}
+                onChange={(e) => {
+                  const newSelected = new Set(selectedDisasters);
+                  if (e.target.checked) {
+                    newSelected.add(disaster.id);
+                  } else {
+                    newSelected.delete(disaster.id);
+                  }
+                  setSelectedDisasters(newSelected);
+                }}
+                disabled={!disaster.hasHotspots}
               />
-              <span className="toggle-slider"></span>
-              Neighborhoods
+              <span 
+                className="disaster-color-dot" 
+                style={{ backgroundColor: disaster.color }}
+              ></span>
+              <span className={!disaster.hasHotspots ? 'disabled-disaster' : ''}>
+                {disaster.name}
+              </span>
             </label>
+            {!disaster.hasHotspots && (
+              <span className="no-hotspots-indicator" title="No location data available">
+                ⚠️
+              </span>
+            )}
           </div>
-          <div className="layer-toggle">
-            <label className="toggle-label">
-              <input 
-                type="checkbox" 
-                checked={showLEWC}
-                onChange={(e) => setShowLEWC(e.target.checked)}
-              />
-              <span className="toggle-slider"></span>
-              LEWC (Disaster Risk)
-            </label>
-          </div>
-        </div>
+        ))}
+      </div>
+      <div className="disaster-selection-actions">
+        <button 
+          className="select-all-btn"
+          onClick={() => {
+            const activeDisasters = availableDisasters
+              .filter(d => d.hasHotspots)
+              .map(d => d.id);
+            setSelectedDisasters(new Set(activeDisasters));
+          }}
+        >
+          Select All
+        </button>
+        <button 
+          className="clear-all-btn"
+          onClick={() => setSelectedDisasters(new Set())}
+        >
+          Clear All
+        </button>
+      </div>
+    </div>
+  )}
+</div>
         
         {/* Chatbot Button */}
         <button 

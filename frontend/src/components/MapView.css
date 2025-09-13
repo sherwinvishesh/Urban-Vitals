@@ -668,3 +668,124 @@
     font-size: 0.9rem;
   }
 }
+
+/* Disaster Selection Panel */
+.disaster-selection-panel {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.disaster-selection-panel h5 {
+  margin: 0 0 0.5rem 0;
+  color: #86efac;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.disaster-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 0.75rem;
+}
+
+.disaster-checkboxes::-webkit-scrollbar {
+  width: 4px;
+}
+
+.disaster-checkboxes::-webkit-scrollbar-track {
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.disaster-checkboxes::-webkit-scrollbar-thumb {
+  background: rgba(52, 211, 153, 0.3);
+  border-radius: 2px;
+}
+
+.disaster-checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.disaster-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #a7f3d0;
+  font-size: 0.8rem;
+  user-select: none;
+  flex: 1;
+}
+
+.disaster-checkbox-label input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.disaster-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.disabled-disaster {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.no-hotspots-indicator {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.disaster-selection-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.select-all-btn,
+.clear-all-btn {
+  flex: 1;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: #a7f3d0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-all-btn:hover,
+.clear-all-btn:hover {
+  background: rgba(52, 211, 153, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Mobile responsiveness for disaster panel */
+@media (max-width: 768px) {
+  .disaster-selection-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 31, 27, 0.98);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    border-radius: 16px 16px 0 0;
+    padding: 1rem;
+    z-index: 1000;
+    max-height: 50vh;
+  }
+
+  .disaster-checkboxes {
+    max-height: 150px;
+  }
+}

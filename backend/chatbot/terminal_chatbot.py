@@ -4,16 +4,23 @@ import requests
 import google.generativeai as genai
 from dotenv import load_dotenv
 from typing import Dict, List, Any, Optional
+from datetime import datetime
 
 class UrbanVitalsChatbot:
     def __init__(self):
-        """Initialize the Urban Vitals web chatbot"""
+        """Initialize the Urban Vitals web chatbot with enhanced memory"""
         # Load environment variables
         load_dotenv()
         
-        # Initialize conversation tracking
+        # Initialize conversation tracking with enhanced memory
         self.conversation_history = []
-        self.conversation_subject = None
+        self.conversation_context = {
+            "current_neighborhood": None,
+            "last_mentioned_neighborhoods": [],
+            "last_discussed_topics": [],
+            "user_preferences": {},
+            "session_facts": {}  # Store key facts from the conversation
+        }
         
         # Initialize Gemini model
         self.model = None
@@ -23,11 +30,11 @@ class UrbanVitalsChatbot:
         # Load static data
         self.refined_data = None
         self.lewc_data = None
-        self.definitions_data = None  # Add definitions data
+        self.definitions_data = None
         self._load_data()
         
     def _initialize_gemini(self):
-        """Initialize Google Gemini AI model"""
+        """Initialize Google Gemini AI model with enhanced memory instructions"""
         google_api_key = os.getenv("GOOGLE_API_KEY")
         
         if not google_api_key:
@@ -39,26 +46,25 @@ class UrbanVitalsChatbot:
             self.model = genai.GenerativeModel('gemini-1.5-flash-latest')
             
             system_prompt = """
-            You are an expert concierge for the city of Tempe, Arizona. Your tone should be friendly, professional, and natural, as if you're a human expert in a conversation.
-            Avoid robotic phrases like "Of course" or "Certainly". If a user's query contains a likely typo, infer the correct intent based on the conversation's context.
-            Your primary goal is to answer questions using the specific JSON data provided with each user query. Prioritize this data.
-            If the provided data includes "live_aqi_data" or "live_weather_data" sections, seamlessly integrate that real-time information.
-            NEVER mention that your knowledge is limited to the provided data or suggest checking other sources.
-            You must hold a conversation and remember context from previous questions.
-            If you cannot answer, simply say, "That's a great question, but I don't have that information right now."
-            Keep responses concise and conversational for a web chat interface.
+            You are an expert concierge for the city of Tempe, Arizona. Your tone should be friendly, professional, and natural.
             
-            You have access to comprehensive definitions for all Urban Vitals terms and metrics. Use these definitions to explain concepts clearly.
+            CRITICAL MEMORY INSTRUCTIONS:
+            - You MUST remember and maintain context throughout the conversation
+            - When a user refers to "it", "that neighborhood", "there", etc., use the conversation context to understand what they're referring to
+            - If you mention a neighborhood or answer a question about one, remember that for follow-up questions
+            - Always consider the full conversation history when responding
+            - If unclear about a pronoun reference, ask for clarification rather than saying you don't have information
             
-            When asked about which neighborhood has the highest/lowest scores, analyze ALL neighborhoods in the provided data and give specific names and values.
+            Your primary goal is to answer questions using the specific JSON data provided with each user query.
+            When asked about highest/lowest scores, analyze ALL neighborhoods and provide specific names and values.
             When comparing neighborhoods, provide specific numerical comparisons.
-            When explaining green scores, break down the components that contribute to the score.
+            When explaining scores, break down the components that contribute to the score.
+            
+            Keep responses concise and conversational for a web chat interface.
             """
             
-            self.chat = self.model.start_chat(history=[
-                {'role': 'user', 'parts': [{'text': system_prompt}]},
-                {'role': 'model', 'parts': [{'text': "Hello! I'm ready to help you explore Tempe. What would you like to know?"}]}
-            ])
+            # Don't start a fresh chat each time - we'll manage the conversation history manually
+            self.chat = self.model.start_chat(history=[])
             
             print("Gemini model initialized successfully")
             
@@ -71,7 +77,7 @@ class UrbanVitalsChatbot:
         """Load neighborhood data from JSON files"""
         refined_path = "backend/data-lib/Tempe-AZ-data.json"
         lewc_path = "backend/data-lib/Tempe-AZ-lewc-data.json"
-        definitions_path = "backend/data-lib/summary.json"  # This is your definitions file
+        definitions_path = "backend/data-lib/summary.json"
         
         # Try alternative paths if the main ones don't work
         alternative_paths = [
@@ -84,7 +90,6 @@ class UrbanVitalsChatbot:
             with open(refined_path, 'r', encoding='utf-8') as f:
                 self.refined_data = json.load(f)
         except FileNotFoundError:
-            # Try alternative paths
             for alt_refined, _, _ in alternative_paths:
                 try:
                     with open(alt_refined, 'r', encoding='utf-8') as f:
@@ -93,7 +98,7 @@ class UrbanVitalsChatbot:
                 except FileNotFoundError:
                     continue
             else:
-                print(f"Warning: Could not find refined data file at any location")
+                print(f"Warning: Could not find refined data file")
                 self.refined_data = {}
         except json.JSONDecodeError as e:
             print(f"Error parsing refined data: {e}")
@@ -104,7 +109,6 @@ class UrbanVitalsChatbot:
             with open(lewc_path, 'r', encoding='utf-8') as f:
                 self.lewc_data = json.load(f)
         except FileNotFoundError:
-            # Try alternative paths
             for _, alt_lewc, _ in alternative_paths:
                 try:
                     with open(alt_lewc, 'r', encoding='utf-8') as f:
@@ -113,7 +117,7 @@ class UrbanVitalsChatbot:
                 except FileNotFoundError:
                     continue
             else:
-                print(f"Warning: Could not find LEWC data file, using empty data")
+                print(f"Warning: Could not find LEWC data file")
                 self.lewc_data = {}
         except json.JSONDecodeError as e:
             print(f"Error parsing LEWC data: {e}")
@@ -124,7 +128,6 @@ class UrbanVitalsChatbot:
             with open(definitions_path, 'r', encoding='utf-8') as f:
                 self.definitions_data = json.load(f)
         except FileNotFoundError:
-            # Try alternative paths
             for _, _, alt_definitions in alternative_paths:
                 try:
                     with open(alt_definitions, 'r', encoding='utf-8') as f:
@@ -133,41 +136,158 @@ class UrbanVitalsChatbot:
                 except FileNotFoundError:
                     continue
             else:
-                print(f"Warning: Could not find definitions data file, using empty data")
+                print(f"Warning: Could not find definitions data file")
                 self.definitions_data = []
         except json.JSONDecodeError as e:
             print(f"Error parsing definitions data: {e}")
             self.definitions_data = []
-    
-    def _find_definition(self, term: str) -> Optional[str]:
-        """Find definition for a given term"""
-        if not self.definitions_data:
-            return None
+
+    def _update_conversation_context(self, user_message: str, bot_response: str):
+        """Update conversation context based on the interaction"""
+        user_lower = user_message.lower()
+        response_lower = bot_response.lower()
         
-        term_lower = term.lower().replace('_', ' ').replace('-', ' ')
+        # Extract neighborhood mentions from the response
+        mentioned_neighborhoods = []
+        if self.refined_data:
+            for neighborhood_name in self.refined_data.keys():
+                if neighborhood_name.lower() in response_lower:
+                    mentioned_neighborhoods.append(neighborhood_name)
         
-        for definition in self.definitions_data:
-            if isinstance(definition, dict) and 'term' in definition and 'description' in definition:
-                def_term = definition['term'].lower().replace('_', ' ').replace('-', ' ')
-                if term_lower in def_term or def_term in term_lower:
-                    return definition['description']
+        # Update current neighborhood if one was specifically mentioned
+        if mentioned_neighborhoods:
+            self.conversation_context["current_neighborhood"] = mentioned_neighborhoods[0]
+            self.conversation_context["last_mentioned_neighborhoods"] = mentioned_neighborhoods[:3]  # Keep last 3
         
-        return None
-    
+        # Track topics discussed
+        topics = []
+        if "green score" in user_lower or "green score" in response_lower:
+            topics.append("green_score")
+        if "air quality" in user_lower or "air quality" in response_lower:
+            topics.append("air_quality")
+        if "water quality" in user_lower or "water quality" in response_lower:
+            topics.append("water_quality")
+        if "walkability" in user_lower or "walkability" in response_lower:
+            topics.append("walkability")
+        if "lewc" in user_lower or "environmental risk" in user_lower:
+            topics.append("lewc_score")
+        
+        if topics:
+            self.conversation_context["last_discussed_topics"] = topics
+        
+        # Store important facts from responses
+        if "highest" in response_lower and "score" in response_lower:
+            # Extract the neighborhood with highest score
+            for neighborhood in mentioned_neighborhoods:
+                self.conversation_context["session_facts"][f"highest_score_neighborhood"] = neighborhood
+        
+        if "lowest" in response_lower and "score" in response_lower:
+            for neighborhood in mentioned_neighborhoods:
+                self.conversation_context["session_facts"][f"lowest_score_neighborhood"] = neighborhood
+
+    def _resolve_pronouns_and_references(self, message: str) -> str:
+        """Resolve pronouns and references in user messages"""
+        message_lower = message.lower()
+        resolved_message = message
+        
+        # Handle common pronoun references
+        pronoun_patterns = ["it", "its", "that neighborhood", "there", "this place", "that place"]
+        
+        has_pronoun = any(pattern in message_lower for pattern in pronoun_patterns)
+        
+        if has_pronoun and self.conversation_context["current_neighborhood"]:
+            current_neighborhood = self.conversation_context["current_neighborhood"]
+            
+            # Replace pronouns with the actual neighborhood name
+            resolved_message = message.replace(" it ", f" {current_neighborhood} ")
+            resolved_message = resolved_message.replace(" its ", f" {current_neighborhood}'s ")
+            resolved_message = resolved_message.replace("that neighborhood", current_neighborhood)
+            resolved_message = resolved_message.replace(" there", f" in {current_neighborhood}")
+            resolved_message = resolved_message.replace("this place", current_neighborhood)
+            resolved_message = resolved_message.replace("that place", current_neighborhood)
+            
+            # Handle sentence-starting pronouns
+            if message_lower.startswith("it "):
+                resolved_message = resolved_message.replace("It ", f"{current_neighborhood} ", 1)
+            if message_lower.startswith("its "):
+                resolved_message = resolved_message.replace("Its ", f"{current_neighborhood}'s ", 1)
+        
+        return resolved_message
+
+    def _build_context_prompt(self, message: str, relevant_context: str) -> str:
+        """Build a comprehensive context prompt including conversation history"""
+        
+        # Get recent conversation history
+        recent_history = ""
+        if len(self.conversation_history) > 0:
+            recent_history = "Recent Conversation:\n"
+            for i, exchange in enumerate(self.conversation_history[-3:]):  # Last 3 exchanges
+                recent_history += f"User: {exchange['user']}\n"
+                if exchange.get('response'):
+                    recent_history += f"Assistant: {exchange['response']}\n"
+            recent_history += "\n"
+        
+        # Build current context
+        context_info = ""
+        if self.conversation_context["current_neighborhood"]:
+            context_info += f"Currently discussing: {self.conversation_context['current_neighborhood']}\n"
+        
+        if self.conversation_context["last_mentioned_neighborhoods"]:
+            context_info += f"Recently mentioned neighborhoods: {', '.join(self.conversation_context['last_mentioned_neighborhoods'])}\n"
+        
+        if self.conversation_context["last_discussed_topics"]:
+            topics = [topic.replace('_', ' ').title() for topic in self.conversation_context["last_discussed_topics"]]
+            context_info += f"Recent topics: {', '.join(topics)}\n"
+        
+        if self.conversation_context["session_facts"]:
+            context_info += f"Session facts: {json.dumps(self.conversation_context['session_facts'], indent=2)}\n"
+        
+        # Check if the message is asking for definitions or explanations
+        definition_keywords = ['what is', 'what does', 'define', 'meaning of', 'explain', 'definition']
+        is_definition_query = any(keyword in message.lower() for keyword in definition_keywords)
+        
+        definitions_context = ""
+        if is_definition_query and self.definitions_data:
+            definitions_context = f"""
+Available Term Definitions:
+{json.dumps(self.definitions_data, indent=2)}
+"""
+        
+        prompt = f"""
+CONTEXT INSTRUCTIONS:
+- Maintain conversation continuity and remember what has been discussed
+- Use the conversation history and context to understand references like "it", "that neighborhood", etc.
+- The user's question may reference previously discussed neighborhoods or topics
+
+{recent_history}
+{context_info}
+{definitions_context}
+
+Current Neighborhood Data:
+{relevant_context if relevant_context else "General query - no specific neighborhood data"}
+
+IMPORTANT: If the user is asking about a specific metric (like "how is its water quality") and we previously discussed a neighborhood, provide the specific data for that neighborhood.
+
+User Question: {message}
+
+Please provide a helpful, contextual response that considers the entire conversation.
+"""
+        
+        return prompt
+
     def get_response(self, message: str, context: Optional[Dict] = None) -> str:
-        """
-        Generate a response to the user's message
-        
-        Args:
-            message (str): User's input message
-            context (Dict): Context including neighborhoods and selected neighborhood
-        
-        Returns:
-            str: Chatbot's response
-        """
+        """Generate a response with enhanced memory and context tracking"""
         try:
+            # Resolve pronouns before processing
+            resolved_message = self._resolve_pronouns_and_references(message)
+            
             # Add message to conversation history
-            self.conversation_history.append({"user": message, "response": None})
+            self.conversation_history.append({
+                "user": message,
+                "resolved_user": resolved_message,
+                "response": None,
+                "timestamp": datetime.now().isoformat()
+            })
             
             # Handle empty messages
             if not message.strip():
@@ -175,32 +295,43 @@ class UrbanVitalsChatbot:
             
             # Use provided context or fall back to loaded data
             if context and context.get("neighborhoods"):
-                # Convert web context to our data format
                 neighborhoods_data = self._convert_web_context_to_data_format(context["neighborhoods"])
                 selected_neighborhood = context.get("selected_neighborhood")
             else:
                 neighborhoods_data = self.refined_data
                 selected_neighborhood = None
             
-            # Get relevant context for the query
+            # Update current neighborhood from context if provided
+            if selected_neighborhood and selected_neighborhood.get("name"):
+                self.conversation_context["current_neighborhood"] = selected_neighborhood["name"]
+            
+            # Get relevant context for the query (use resolved message)
             relevant_context = self._get_relevant_context(
-                message, 
+                resolved_message, 
                 neighborhoods_data, 
                 self.lewc_data, 
                 selected_neighborhood
             )
             
-            # If Gemini is available, use it
+            # Generate response
             if self.chat:
-                return self._get_gemini_response(message, relevant_context)
+                response = self._get_gemini_response(resolved_message, relevant_context)
             else:
-                # Enhanced fallback to rule-based responses
-                return self._get_enhanced_fallback_response(message, neighborhoods_data, selected_neighborhood)
+                response = self._get_enhanced_fallback_response(resolved_message, neighborhoods_data, selected_neighborhood)
+            
+            # Update conversation context
+            self._update_conversation_context(resolved_message, response)
+            
+            # Update conversation history with response
+            if self.conversation_history:
+                self.conversation_history[-1]["response"] = response
+            
+            return response
                 
         except Exception as e:
             print(f"Error in get_response: {e}")
             return "I'm sorry, I encountered an error processing your request. Please try again."
-    
+
     def _convert_web_context_to_data_format(self, neighborhoods: List[Dict]) -> Dict:
         """Convert web API format to our internal data format"""
         converted = {}
@@ -224,115 +355,94 @@ class UrbanVitalsChatbot:
                     converted[name]["homeowners"][key] = value
         
         return converted
-    
-    def _get_gemini_response(self, message: str, context: str) -> str:
-        """Get response from Gemini AI model"""
+
+    def _get_gemini_response(self, message: str, relevant_context: str) -> str:
+        """Get response from Gemini AI model with full context"""
         try:
-            # Check if the message is asking for definitions or explanations
-            definition_keywords = ['what is', 'what does', 'define', 'meaning of', 'explain', 'definition']
-            is_definition_query = any(keyword in message.lower() for keyword in definition_keywords)
+            # Build comprehensive context prompt
+            context_prompt = self._build_context_prompt(message, relevant_context)
             
-            definitions_context = ""
-            if is_definition_query and self.definitions_data:
-                definitions_context = f"""
-Available Term Definitions:
-{json.dumps(self.definitions_data, indent=2)}
-"""
-            
-            if context or definitions_context:
-                prompt = f"""
-Please answer the user's question based on the following data about Tempe neighborhoods.
-When asked about highest/lowest scores, analyze all neighborhoods and provide specific names and values.
-When comparing neighborhoods, give specific numerical comparisons.
-
-{definitions_context}
-
-{f"Relevant Neighborhood Data: {context}" if context else ""}
-
-User Question: {message}
-"""
-            else:
-                prompt = message
-            
-            response = self.chat.send_message(prompt)
-            
-            # Update conversation history
-            if self.conversation_history:
-                self.conversation_history[-1]["response"] = response.text
+            # Send to Gemini
+            response = self.chat.send_message(context_prompt)
             
             return response.text
             
         except Exception as e:
             print(f"Error getting Gemini response: {e}")
             return self._get_enhanced_fallback_response(message, {}, None)
-    
+
     def _get_enhanced_fallback_response(self, message: str, neighborhoods_data: Dict, selected_neighborhood: Dict) -> str:
-        """Enhanced fallback response system when Gemini is unavailable"""
+        """Enhanced fallback with context awareness"""
         message_lower = message.lower().strip()
         
         # Handle greetings
         if any(word in message_lower for word in ["hello", "hi", "hey", "greetings"]):
-            if selected_neighborhood:
-                return f"Hello! I see you're looking at {selected_neighborhood.get('name', 'this neighborhood')}. What would you like to know about it?"
+            if self.conversation_context["current_neighborhood"]:
+                return f"Hello! We were just discussing {self.conversation_context['current_neighborhood']}. What else would you like to know?"
             return "Hello! I'm your Urban Vitals assistant. What would you like to know about Tempe's neighborhoods?"
+        
+        # Handle contextual queries about current neighborhood
+        current_neighborhood = self.conversation_context.get("current_neighborhood")
+        if current_neighborhood and current_neighborhood in self.refined_data:
+            neighborhood_data = self.refined_data[current_neighborhood]
+            
+            # Water quality question
+            if "water quality" in message_lower:
+                water_quality = neighborhood_data.get("homeowners", {}).get("water_quality", "N/A")
+                water_exp = neighborhood_data.get("homeowners", {}).get("water_quality_exp", "")
+                response = f"{current_neighborhood} has a water quality score of {water_quality}/10."
+                if water_exp:
+                    response += f" {water_exp}"
+                return response
+            
+            # Air quality question
+            if "air quality" in message_lower:
+                air_quality = neighborhood_data.get("homeowners", {}).get("air_quality", "N/A")
+                air_exp = neighborhood_data.get("homeowners", {}).get("aqi_reason", "")
+                response = f"{current_neighborhood} has an air quality score of {air_quality}/10."
+                if air_exp:
+                    response += f" {air_exp}"
+                return response
+            
+            # Other metrics
+            metrics = {
+                "walkability": "walkability",
+                "safety": "public_safety",
+                "cleanliness": "cleanliness",
+                "green": "greenery_coverage"
+            }
+            
+            for keyword, metric in metrics.items():
+                if keyword in message_lower:
+                    score = neighborhood_data.get("homeowners", {}).get(metric, "N/A")
+                    return f"{current_neighborhood} has a {keyword} score of {score}/10."
         
         # Handle definition queries
         definition_keywords = ['what is', 'what does', 'define', 'meaning of', 'explain']
         if any(keyword in message_lower for keyword in definition_keywords):
             return self._handle_definition_query(message_lower)
         
-        # Handle highest/lowest green score questions
+        # Handle highest/lowest queries
         if any(phrase in message_lower for phrase in ["highest green score", "best green score", "top green score"]):
             return self._find_highest_green_score(neighborhoods_data)
         
         if any(phrase in message_lower for phrase in ["lowest green score", "worst green score", "bottom green score"]):
             return self._find_lowest_green_score(neighborhoods_data)
         
-        # Handle specific neighborhood queries
-        if "green score" in message_lower:
-            if selected_neighborhood:
-                score = selected_neighborhood.get("green_score", "N/A")
-                name = selected_neighborhood.get("name", "this neighborhood")
-                return f"{name} has a Green Score of {score}/10. This score combines environmental quality, infrastructure, and livability factors."
-            return "The Green Score is a comprehensive 1-10 rating that measures neighborhood sustainability, combining air quality, infrastructure, and livability metrics."
-        
-        # Handle air quality questions
-        if any(term in message_lower for term in ["air quality", "aqi", "pollution"]):
-            if selected_neighborhood:
-                air_quality = selected_neighborhood.get("homeowners", {}).get("air_quality", "N/A")
-                name = selected_neighborhood.get("name", "this neighborhood")
-                return f"{name} has an air quality score of {air_quality}/10. Higher scores indicate cleaner air with fewer pollutants."
-            return "Air quality measures pollution levels and environmental health. Higher scores indicate cleaner air with fewer pollutants."
-        
-        # Handle LEWC score questions
-        if any(term in message_lower for term in ["lewc", "environmental risk", "disaster risk"]):
-            definition = self._find_definition("lewc_score")
-            if definition:
-                return f"LEWC Score: {definition}"
-            return "LEWC (Local Environmental Worry Composite) represents the overall environmental risk to a neighborhood, including factors like flash floods, heat island effect, and drought."
-        
-        # Handle comparison questions
-        if any(term in message_lower for term in ["compare", "versus", "vs", "better than", "worse than"]):
-            return "I can help compare neighborhoods based on their Green Scores and individual sustainability metrics. Each area has unique strengths and challenges."
-        
-        # Default response for unhandled queries
         return "That's a great question, but I don't have that information right now."
-    
+
     def _handle_definition_query(self, message_lower: str) -> str:
         """Handle definition queries using the definitions data"""
-        # Extract potential terms from the query
         for definition in self.definitions_data:
             if isinstance(definition, dict) and 'term' in definition:
                 term = definition['term'].lower()
                 term_words = term.replace('_', ' ').replace('-', ' ').split()
                 
-                # Check if any significant words from the term appear in the query
                 if any(word in message_lower for word in term_words if len(word) > 3):
                     return f"**{definition['term'].replace('_', ' ').title()}**: {definition['description']}"
         
-        # If no specific term found, return general help
         return "I can help explain Urban Vitals terms like green_score, air_quality, walkability, lewc_score, and many others. What specific term would you like me to explain?"
-    
+
     def _find_highest_green_score(self, neighborhoods_data: Dict) -> str:
         """Find neighborhood with highest green score"""
         if not neighborhoods_data:
@@ -348,60 +458,61 @@ User Question: {message}
                 highest_neighborhood = name
         
         if highest_neighborhood:
+            # Update context
+            self.conversation_context["current_neighborhood"] = highest_neighborhood
             return f"{highest_neighborhood} has the highest Green Score at {highest_score}/10."
         else:
             return "I couldn't find green score data for the neighborhoods."
-    
+
     def _find_lowest_green_score(self, neighborhoods_data: Dict) -> str:
         """Find neighborhood with lowest green score"""
         if not neighborhoods_data:
             return "I don't have neighborhood data available right now."
         
-        lowest_score = 11  # Start higher than max possible score
+        lowest_score = 11
         lowest_neighborhood = None
         
         for name, data in neighborhoods_data.items():
             score = data.get("green_score", 11)
-            if score < lowest_score and score > 0:  # Exclude 0 scores as they might be missing data
+            if score < lowest_score and score > 0:
                 lowest_score = score
                 lowest_neighborhood = name
         
         if lowest_neighborhood:
+            # Update context
+            self.conversation_context["current_neighborhood"] = lowest_neighborhood
             return f"{lowest_neighborhood} has the lowest Green Score at {lowest_score}/10."
         else:
             return "I couldn't find green score data for the neighborhoods."
-    
-    def _get_fallback_response(self, message: str, context: str, selected_neighborhood: Dict) -> str:
-        """Original fallback response system (kept for compatibility)"""
-        return self._get_enhanced_fallback_response(message, {}, selected_neighborhood)
-    
+
     def _get_relevant_context(self, query: str, neighborhoods_data: Dict, lewc_data: Dict, selected_neighborhood: Dict) -> str:
-        """Get relevant context data for the query"""
+        """Get relevant context data for the query with conversation awareness"""
         try:
             context_data = {}
             
             # For questions about highest/lowest scores, include all neighborhoods
             if any(phrase in query.lower() for phrase in ["highest", "lowest", "best", "worst", "top", "bottom", "compare"]):
-                # Include all neighborhoods for comparison queries
                 context_data = neighborhoods_data.copy()
             else:
-                # For other queries, focus on selected neighborhood or find mentioned ones
+                # Determine subject neighborhood
                 subject_neighborhood = None
                 
-                # If we have a selected neighborhood, use it as the subject
-                if selected_neighborhood:
-                    subject_name = selected_neighborhood.get("name")
-                    if subject_name and subject_name in neighborhoods_data:
-                        subject_neighborhood = subject_name
+                # First check if we have a current neighborhood in context
+                if self.conversation_context.get("current_neighborhood"):
+                    subject_neighborhood = self.conversation_context["current_neighborhood"]
                 
-                # Find mentioned neighborhoods in the query
+                # Override with selected neighborhood if provided
+                if selected_neighborhood and selected_neighborhood.get("name"):
+                    subject_neighborhood = selected_neighborhood["name"]
+                
+                # Look for mentioned neighborhoods in query
                 if not subject_neighborhood:
                     mentioned_neighborhoods = self._find_mentioned_neighborhoods(query, neighborhoods_data.keys())
                     if mentioned_neighborhoods:
                         subject_neighborhood = mentioned_neighborhoods[0]
                 
                 # If we have a subject, fetch its data
-                if subject_neighborhood:
+                if subject_neighborhood and subject_neighborhood in neighborhoods_data:
                     context_data[subject_neighborhood] = neighborhoods_data[subject_neighborhood].copy()
                     
                     # Add environmental risk data if available
@@ -426,15 +537,15 @@ User Question: {message}
                         if live_weather:
                             context_data[subject_neighborhood]["live_weather_data"] = live_weather
                 else:
-                    # If no specific neighborhood, include a sample of all data for general queries
-                    context_data = dict(list(neighborhoods_data.items())[:5])  # Sample of 5 neighborhoods
+                    # If no specific neighborhood, include a sample for general queries
+                    context_data = dict(list(neighborhoods_data.items())[:5])
             
             return json.dumps(context_data, indent=2) if context_data else None
             
         except Exception as e:
             print(f"Error getting relevant context: {e}")
             return None
-    
+
     def _find_mentioned_neighborhoods(self, query: str, neighborhood_names: List[str]) -> List[str]:
         """Find neighborhoods mentioned in the query"""
         mentioned = []
@@ -446,7 +557,7 @@ User Question: {message}
                 lower_query = lower_query.replace(name.lower(), "")
         
         return mentioned
-    
+
     def _get_live_aqi(self, lat: float, lng: float) -> Optional[Dict]:
         """Fetch live Air Quality Index data"""
         if lat is None or lng is None:
@@ -467,7 +578,7 @@ User Question: {message}
         except requests.exceptions.RequestException as e:
             print(f"Warning: Could not fetch live AQI data. {e}")
             return None
-    
+
     def _get_live_weather(self, lat: float, lng: float) -> Optional[Dict]:
         """Fetch live weather data"""
         if lat is None or lng is None:
@@ -491,7 +602,7 @@ User Question: {message}
         except requests.exceptions.RequestException as e:
             print(f"Warning: Could not fetch live weather data. {e}")
             return None
-    
+
     def _aqi_value_to_quality(self, aqi: int) -> str:
         """Convert AQI value to quality description"""
         if aqi is None:
@@ -508,7 +619,7 @@ User Question: {message}
             return "Very Unhealthy"
         else:
             return "Hazardous"
-    
+
     def _wmo_code_to_description(self, code: int) -> str:
         """Convert WMO weather code to description"""
         if code is None:
@@ -524,29 +635,25 @@ User Question: {message}
         }
         
         return mapping.get(code, "unknown conditions")
-    
+
     def reset(self):
         """Reset the conversation state"""
         self.conversation_history = []
-        self.conversation_subject = None
+        self.conversation_context = {
+            "current_neighborhood": None,
+            "last_mentioned_neighborhoods": [],
+            "last_discussed_topics": [],
+            "user_preferences": {},
+            "session_facts": {}
+        }
         
         # Reset Gemini chat if available
         if self.model:
             try:
-                system_prompt = """
-                You are an expert concierge for the city of Tempe, Arizona. Your tone should be friendly, professional, and natural.
-                Keep responses concise and conversational for a web chat interface.
-                When asked about highest/lowest scores, analyze ALL neighborhoods in the provided data and give specific names and values.
-                You have access to comprehensive definitions for all Urban Vitals terms and metrics.
-                """
-                
-                self.chat = self.model.start_chat(history=[
-                    {'role': 'user', 'parts': [{'text': system_prompt}]},
-                    {'role': 'model', 'parts': [{'text': "Hello! I'm ready to help you explore Tempe. What would you like to know?"}]}
-                ])
+                self.chat = self.model.start_chat(history=[])
             except Exception as e:
                 print(f"Error resetting Gemini chat: {e}")
-    
+
     def __call__(self, message: str, context: Optional[Dict] = None) -> str:
         """Allow the chatbot to be called directly"""
         return self.get_response(message, context)

@@ -149,13 +149,12 @@ def load_definitions():
     except Exception as e:
         print(f"Error reading definitions file: {e}")
         return []
-
 def load_lewc_data():
-    """Load LEWC data from JSON file"""
+    """Load LEWC disaster data from JSON file"""
     possible_paths = [
-        Path(__file__).parent / "data-lib" / "Tempe-AZ-lewc-data.json",
-        Path(__file__).parent / "Tempe-AZ-lewc-data.json",
-        Path(__file__).parent / "lewc-data.json",
+        Path(__file__).parent / "data-lib" / "Tempe-AZ-lewc.json",  # This should be the disaster file
+        Path(__file__).parent / "Tempe-AZ-lewc.json",
+        Path(__file__).parent / "lewc.json",
     ]
     
     data_path = None
@@ -165,20 +164,20 @@ def load_lewc_data():
             break
     
     if not data_path:
-        print(f"Warning: Could not find LEWC data file. Looked in: {[str(p) for p in possible_paths]}")
+        print(f"Warning: Could not find LEWC disaster data file. Looked in: {[str(p) for p in possible_paths]}")
         return {}
     
-    print(f"Loading LEWC data from: {data_path}")
+    print(f"Loading LEWC disaster data from: {data_path}")
     
     try:
         with open(data_path, 'r', encoding='utf-8') as f:
             lewc_data = json.load(f)
         return lewc_data
     except json.JSONDecodeError as e:
-        print(f"Error parsing LEWC data: {e}")
+        print(f"Error parsing LEWC disaster data: {e}")
         return {}
     except Exception as e:
-        print(f"Error reading LEWC file: {e}")
+        print(f"Error reading LEWC disaster file: {e}")
         return {}
 
 @app.get("/")
