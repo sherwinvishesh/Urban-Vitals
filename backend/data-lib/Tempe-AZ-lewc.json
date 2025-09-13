@@ -1,0 +1,91 @@
+{
+    "Extreme Heat": {
+      "description": "Dangerously high temperatures, often exacerbated by the urban heat island effect where buildings and pavement absorb and retain heat. This is a primary and frequent risk in Tempe.",
+      "map_color": "#FF4500",
+      "hotspots": [
+        { "lat": 33.4255, "lng": -111.94, "radius_meters": 2500 },
+        { "lat": 33.418, "lng": -111.9265, "radius_meters": 2200 },
+        { "lat": 33.458, "lng": -111.975, "radius_meters": 1800 },
+        { "lat": 33.3785, "lng": -111.964, "radius_meters": 1500 },
+        { "lat": 33.408, "lng": -111.94, "radius_meters": 2300 },
+        { "lat": 33.415, "lng": -111.926, "radius_meters": 2100 },
+        { "lat": 33.408, "lng": -111.914, "radius_meters": 1900 },
+        { "lat": 33.391, "lng": -111.906, "radius_meters": 1700 },
+        { "lat": 33.3785, "lng": -111.942, "radius_meters": 1600 },
+        { "lat": 33.395, "lng": -111.895, "radius_meters": 2000 },
+        { "lat": 33.421, "lng": -111.933, "radius_meters": 2400 },
+        { "lat": 33.435, "lng": -111.951, "radius_meters": 2600 },
+        { "lat": 33.408, "lng": -111.968, "radius_meters": 1800 },
+        { "lat": 33.391, "lng": -111.94, "radius_meters": 2000 },
+        { "lat": 33.4145, "lng": -111.914, "radius_meters": 1900 },
+        { "lat": 33.346, "lng": -111.976, "radius_meters": 1400 },
+        { "lat": 33.433, "lng": -111.8972, "radius_meters": 2700 }
+      ]
+    },
+    "Flash Floods": {
+      "description": "Rapid flooding of low-lying areas, washes, and streets caused by intense rainfall from monsoon storms. The Salt River/Tempe Town Lake area is particularly susceptible.",
+      "map_color": "#0000FF",
+      "hotspots": [
+        { "lat": 33.433, "lng": -111.939, "radius_meters": 2000 },
+        { "lat": 33.414, "lng": -111.941, "radius_meters": 1200 },
+        { "lat": 33.378, "lng": -111.962, "radius_meters": 1000 },
+        { "lat": 33.37, "lng": -111.93, "radius_meters": 1100 },
+        { "lat": 33.38, "lng": -111.925, "radius_meters": 1300 },
+        { "lat": 33.385, "lng": -111.91, "radius_meters": 1400 },
+        { "lat": 33.418, "lng": -111.935, "radius_meters": 1500 },
+        { "lat": 33.391, "lng": -111.91, "radius_meters": 1250 },
+        { "lat": 33.4045, "lng": -111.8955, "radius_meters": 1600 },
+        { "lat": 33.4077, "lng": -111.963, "radius_meters": 1000 },
+        { "lat": 33.42, "lng": -111.926, "radius_meters": 1700 }
+      ]
+    },
+    "Drought": {
+      "description": "A prolonged period of abnormally low rainfall, leading to a shortage of water. This is a long-term, regional concern for the entire state of Arizona.",
+      "map_color": "#FFA500",
+      "hotspots": [
+        { "lat": 33.414, "lng": -111.929, "radius_meters": 50000 }
+      ]
+    },
+    "Dust Storms (Haboob)": {
+      "description": "Intense dust storms that can arise from thunderstorm outflows, drastically reducing visibility and air quality. These are common during the monsoon season.",
+      "map_color": "#8B4513",
+      "hotspots": [
+        { "lat": 33.38, "lng": -111.93, "radius_meters": 25000 },
+        { "lat": 33.43, "lng": -111.90, "radius_meters": 25000 }
+      ]
+    },
+    "Severe Thunderstorm": {
+      "description": "Storms characterized by strong winds (microbursts), heavy rain, frequent lightning, and sometimes hail. They can cause power outages and localized damage.",
+      "map_color": "#4B0082",
+      "hotspots": [
+        { "lat": 33.41, "lng": -111.91, "radius_meters": 8000 },
+        { "lat": 33.36, "lng": -111.95, "radius_meters": 7500 },
+        { "lat": 33.43, "lng": -111.96, "radius_meters": 8000 },
+        { "lat": 33.34, "lng": -111.90, "radius_meters": 7500 }
+      ]
+    },
+    "Earthquake": {
+      "description": "While Arizona has low seismic activity compared to California, minor tremors are possible. This represents the potential impact from a minor, localized seismic event.",
+      "map_color": "#A0522D",
+      "hotspots": null
+    },
+    "Wildfire": {
+      "description": "Risk of fires, especially in brush areas near city limits like Papago Park or South Mountain, particularly during dry and windy conditions.",
+      "map_color": "#FF0000",
+      "hotspots": [
+        { "lat": 33.456, "lng": -111.968, "radius_meters": 7000 },
+        { "lat": 33.349, "lng": -111.975, "radius_meters": 8000 }
+      ]
+    },
+    "Tornado": {
+      "description": "Tornadoes are rare in Arizona but can occur, typically as weak, short-lived funnels associated with severe thunderstorms. The potential impact area is usually small.",
+      "map_color": "#808080",
+      "hotspots": null
+    },
+    "Cyclone (Remnant)": {
+      "description": "Extremely rare event where the remnants of a Pacific hurricane can bring widespread heavy rainfall and potential flooding to the region.",
+      "map_color": "#2E8B57",
+      "hotspots": null
+    }
+  }
+  

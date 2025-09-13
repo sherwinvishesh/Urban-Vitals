@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a1f1b;
+  color: #e0f2e9;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 31, 27, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(52, 211, 153, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 211, 153, 0.5);
+}
+
+/* Mapbox overrides for dark theme */
+.mapboxgl-ctrl-group {
+  background: rgba(10, 31, 27, 0.95) !important;
+  border: 1px solid rgba(52, 211, 153, 0.3) !important;
+}
+
+.mapboxgl-ctrl-group button {
+  color: #86efac !important;
+}
+
+.mapboxgl-ctrl-group button:hover {
+  background-color: rgba(52, 211, 153, 0.2) !important;
+}
+
+.mapboxgl-ctrl-attrib {
+  background: rgba(10, 31, 27, 0.8) !important;
+  color: #a7f3d0 !important;
+}
+
+.mapboxgl-ctrl-attrib a {
+  color: #34d399 !important;
+}

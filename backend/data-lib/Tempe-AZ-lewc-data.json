@@ -1,0 +1,8151 @@
+{
+  "Alameda Estates": {
+    "id": 1,
+    "coordinates": {
+      "lat": 33.43,
+      "lng": -111.95
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4305,
+            "lng": -111.944
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Alameda Meadows": {
+    "id": 2,
+    "coordinates": {
+      "lat": 33.3636,
+      "lng": -111.9442
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Alameda Park": {
+    "id": 3,
+    "coordinates": {
+      "lat": 33.3888,
+      "lng": -111.9682
+    },
+    "lewc_score": 3.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 2,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Alegre Community": {
+    "id": 4,
+    "coordinates": {
+      "lat": 33.3813,
+      "lng": -111.9525
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.952
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Alisanos": {
+    "id": 5,
+    "coordinates": {
+      "lat": 33.4018,
+      "lng": -111.9365
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Alta Mira": {
+    "id": 6,
+    "coordinates": {
+      "lat": 33.4079,
+      "lng": -111.9333
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.93
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Alta Mirada": {
+    "id": 7,
+    "coordinates": {
+      "lat": 33.3712,
+      "lng": -111.9054
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Alterra": {
+    "id": 8,
+    "coordinates": {
+      "lat": 33.3934,
+      "lng": -111.9348
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.936
+          },
+          {
+            "lat": 33.395,
+            "lng": -111.929
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Baseline Hardy": {
+    "id": 9,
+    "coordinates": {
+      "lat": 33.363,
+      "lng": -111.9161
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.964
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Belcourt Manor": {
+    "id": 10,
+    "coordinates": {
+      "lat": 33.3934,
+      "lng": -111.9079
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Bell De Mar Crossing": {
+    "id": 11,
+    "coordinates": {
+      "lat": 33.39,
+      "lng": -111.9
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.899
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Bradley Manor": {
+    "id": 12,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.94
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.942
+          },
+          {
+            "lat": 33.363,
+            "lng": -111.942
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Bradley Place": {
+    "id": 13,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.945
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Brentview": {
+    "id": 14,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.92
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Brentwood Cavalier": {
+    "id": 15,
+    "coordinates": {
+      "lat": 33.3905,
+      "lng": -111.915
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.914
+          },
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Brittany Lane": {
+    "id": 16,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.905
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Broadmor II": {
+    "id": 17,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.925
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          },
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Broadmor Place": {
+    "id": 18,
+    "coordinates": {
+      "lat": 33.365,
+      "lng": -111.918
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Broadway Palms": {
+    "id": 19,
+    "coordinates": {
+      "lat": 33.3855,
+      "lng": -111.91
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.91
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Broadway Terrace": {
+    "id": 20,
+    "coordinates": {
+      "lat": 33.378,
+      "lng": -111.912
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Buena Vista Ranchos": {
+    "id": 21,
+    "coordinates": {
+      "lat": 33.3705,
+      "lng": -111.9072
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Butler Tempe": {
+    "id": 22,
+    "coordinates": {
+      "lat": 33.399,
+      "lng": -111.9145
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Calle De Caballos": {
+    "id": 23,
+    "coordinates": {
+      "lat": 33.386,
+      "lng": -111.93
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Camelot Park Villas": {
+    "id": 24,
+    "coordinates": {
+      "lat": 33.39,
+      "lng": -111.938
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.39,
+            "lng": -111.938
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Camelot Village": {
+    "id": 25,
+    "coordinates": {
+      "lat": 33.395,
+      "lng": -111.93
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Capistrano I": {
+    "id": 26,
+    "coordinates": {
+      "lat": 33.3995,
+      "lng": -111.945
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Capistrano II": {
+    "id": 27,
+    "coordinates": {
+      "lat": 33.4,
+      "lng": -111.95
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4,
+            "lng": -111.95
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Carver Ranch Estates": {
+    "id": 28,
+    "coordinates": {
+      "lat": 33.365,
+      "lng": -111.915
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Carver Terrace": {
+    "id": 29,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.92
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.37,
+            "lng": -111.92
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Casa Fiesta": {
+    "id": 30,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.93
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Casitas East": {
+    "id": 31,
+    "coordinates": {
+      "lat": 33.394,
+      "lng": -111.9205
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Casitas Tempe": {
+    "id": 32,
+    "coordinates": {
+      "lat": 33.3955,
+      "lng": -111.925
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.392,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Cavalier Hills": {
+    "id": 33,
+    "coordinates": {
+      "lat": 33.3865,
+      "lng": -111.915
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Chaparral": {
+    "id": 34,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.93
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.37,
+            "lng": -111.93
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Chelsea Manor": {
+    "id": 35,
+    "coordinates": {
+      "lat": 33.3805,
+      "lng": -111.9185
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Chesapeake": {
+    "id": 36,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.91
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Chipperwood": {
+    "id": 37,
+    "coordinates": {
+      "lat": 33.382,
+      "lng": -111.922
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Circle G Ranches IV": {
+    "id": 38,
+    "coordinates": {
+      "lat": 33.369,
+      "lng": -111.9155
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Clark Park": {
+    "id": 39,
+    "coordinates": {
+      "lat": 33.3745,
+      "lng": -111.909
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Cole Park": {
+    "id": 40,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.903
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Colonia Del Sur I": {
+    "id": 41,
+    "coordinates": {
+      "lat": 33.358,
+      "lng": -111.916
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          },
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Colonia Del Sur III": {
+    "id": 42,
+    "coordinates": {
+      "lat": 33.36,
+      "lng": -111.92
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Colonia Del Sur IV": {
+    "id": 43,
+    "coordinates": {
+      "lat": 33.362,
+      "lng": -111.9225
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.362,
+            "lng": -111.9225
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Concord Village": {
+    "id": 44,
+    "coordinates": {
+      "lat": 33.365,
+      "lng": -111.91
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Continental Villas East III": {
+    "id": 45,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.912
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Corona Ranch": {
+    "id": 46,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.9
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Cottonwoods of Tempe": {
+    "id": 47,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.91
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Coventry Tempe": {
+    "id": 48,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.9
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.899
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Cyprus Southwest": {
+    "id": 49,
+    "coordinates": {
+      "lat": 33.39,
+      "lng": -111.895
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.39,
+            "lng": -111.895
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Daley Park": {
+    "id": 50,
+    "coordinates": {
+      "lat": 33.395,
+      "lng": -111.89
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Dava-Lakeshore": {
+    "id": 51,
+    "coordinates": {
+      "lat": 33.383,
+      "lng": -111.925
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Dromedary": {
+    "id": 52,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.91
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Duskfire": {
+    "id": 53,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.92
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Duskfire II": {
+    "id": 54,
+    "coordinates": {
+      "lat": 33.378,
+      "lng": -111.922
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "East Rio": {
+    "id": 55,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.93
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.3785,
+            "lng": -111.942
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "El Adobe Condominiums": {
+    "id": 56,
+    "coordinates": {
+      "lat": 33.365,
+      "lng": -111.932
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.365,
+            "lng": -111.932
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Encore at Tempe Village": {
+    "id": 57,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.935
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Escalante": {
+    "id": 58,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.925
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.415,
+            "lng": -111.926
+          },
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Estate La Colina": {
+    "id": 59,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.92
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Evergreen": {
+    "id": 60,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.915
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Festiva Tempe": {
+    "id": 61,
+    "coordinates": {
+      "lat": 33.382,
+      "lng": -111.911
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Fiesta Villages": {
+    "id": 62,
+    "coordinates": {
+      "lat": 33.379,
+      "lng": -111.914
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Galleria": {
+    "id": 63,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.92
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Gililland": {
+    "id": 64,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.907
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Graystone": {
+    "id": 65,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.9
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.899
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Hamilton Homes Tempe": {
+    "id": 66,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.905
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Hayden Cove Townhomes": {
+    "id": 67,
+    "coordinates": {
+      "lat": 33.39,
+      "lng": -111.915
+    },
+    "lewc_score": 5.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4255,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Hayden Square": {
+    "id": 68,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.91
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.91
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Historic Date Palm Manor": {
+    "id": 69,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.925
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Holdeman": {
+    "id": 70,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.92
+    },
+    "lewc_score": 5.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Hollis Park": {
+    "id": 71,
+    "coordinates": {
+      "lat": 33.371,
+      "lng": -111.9155
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Homestead": {
+    "id": 72,
+    "coordinates": {
+      "lat": 33.3705,
+      "lng": -111.92
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Hudson Manor": {
+    "id": 73,
+    "coordinates": {
+      "lat": 33.374,
+      "lng": -111.917
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Hudson Trace": {
+    "id": 74,
+    "coordinates": {
+      "lat": 33.3755,
+      "lng": -111.9205
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3755,
+            "lng": -111.9205
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Hughes Acres": {
+    "id": 75,
+    "coordinates": {
+      "lat": 33.3745,
+      "lng": -111.9155
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Indian Bend": {
+    "id": 76,
+    "coordinates": {
+      "lat": 33.376,
+      "lng": -111.912
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Indian Bend Gardens": {
+    "id": 77,
+    "coordinates": {
+      "lat": 33.379,
+      "lng": -111.914
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Jen Tilly Terrace": {
+    "id": 78,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.9185
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.375,
+            "lng": -111.9185
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Juniper Village": {
+    "id": 79,
+    "coordinates": {
+      "lat": 33.3775,
+      "lng": -111.92
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Juniper Watson": {
+    "id": 80,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.923
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Kiwanis Park": {
+    "id": 81,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.91
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Knoell Garden Villas": {
+    "id": 82,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.915
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Knoell Ville Monaco": {
+    "id": 83,
+    "coordinates": {
+      "lat": 33.377,
+      "lng": -111.917
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "La Tierra": {
+    "id": 84,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.912
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Laguna Estates": {
+    "id": 85,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.918
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Las Brisas": {
+    "id": 86,
+    "coordinates": {
+      "lat": 33.3805,
+      "lng": -111.914
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Las Estadas": {
+    "id": 87,
+    "coordinates": {
+      "lat": 33.382,
+      "lng": -111.916
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Lindon Park": {
+    "id": 88,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.911
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Los Prados": {
+    "id": 89,
+    "coordinates": {
+      "lat": 33.379,
+      "lng": -111.913
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Marilyn Ann": {
+    "id": 90,
+    "coordinates": {
+      "lat": 33.376,
+      "lng": -111.9175
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Marlborough Park Estates": {
+    "id": 91,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.91
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Marlborough Park Villas": {
+    "id": 92,
+    "coordinates": {
+      "lat": 33.378,
+      "lng": -111.913
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.378,
+            "lng": -111.913
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "McClintock": {
+    "id": 93,
+    "coordinates": {
+      "lat": 33.3795,
+      "lng": -111.918
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "McClintock Manor": {
+    "id": 94,
+    "coordinates": {
+      "lat": 33.382,
+      "lng": -111.9205
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Meyer Park": {
+    "id": 95,
+    "coordinates": {
+      "lat": 33.3845,
+      "lng": -111.922
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Mistwood": {
+    "id": 96,
+    "coordinates": {
+      "lat": 33.386,
+      "lng": -111.9105
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Mitchell Park": {
+    "id": 97,
+    "coordinates": {
+      "lat": 33.388,
+      "lng": -111.915
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Newberry Terrace": {
+    "id": 98,
+    "coordinates": {
+      "lat": 33.3905,
+      "lng": -111.917
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Nu-Vista": {
+    "id": 99,
+    "coordinates": {
+      "lat": 33.393,
+      "lng": -111.9135
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.393,
+            "lng": -111.9135
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Oaks": {
+    "id": 100,
+    "coordinates": {
+      "lat": 33.3945,
+      "lng": -111.912
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          },
+          {
+            "lat": 33.391,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Oaks II & III": {
+    "id": 101,
+    "coordinates": {
+      "lat": 33.395,
+      "lng": -111.915
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Oasis at Anozira": {
+    "id": 102,
+    "coordinates": {
+      "lat": 33.398,
+      "lng": -111.925
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Optimist Park Northeast": {
+    "id": 103,
+    "coordinates": {
+      "lat": 33.4,
+      "lng": -111.92
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Optimist Park Northwest": {
+    "id": 104,
+    "coordinates": {
+      "lat": 33.402,
+      "lng": -111.922
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Optimist Park Southeast": {
+    "id": 105,
+    "coordinates": {
+      "lat": 33.3985,
+      "lng": -111.9155
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Optimist Park Southwest": {
+    "id": 106,
+    "coordinates": {
+      "lat": 33.4005,
+      "lng": -111.917
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Palmcroft Manor": {
+    "id": 107,
+    "coordinates": {
+      "lat": 33.387,
+      "lng": -111.913
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Papago Park II": {
+    "id": 108,
+    "coordinates": {
+      "lat": 33.389,
+      "lng": -111.91
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Papago Park View": {
+    "id": 109,
+    "coordinates": {
+      "lat": 33.3885,
+      "lng": -111.9125
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Papago Park Village": {
+    "id": 110,
+    "coordinates": {
+      "lat": 33.387,
+      "lng": -111.914
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Papago Parkway": {
+    "id": 111,
+    "coordinates": {
+      "lat": 33.388,
+      "lng": -111.9105
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Park Premiere": {
+    "id": 112,
+    "coordinates": {
+      "lat": 33.39,
+      "lng": -111.912
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Park Premiere South": {
+    "id": 113,
+    "coordinates": {
+      "lat": 33.391,
+      "lng": -111.913
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Park Premiere South II": {
+    "id": 114,
+    "coordinates": {
+      "lat": 33.392,
+      "lng": -111.914
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Park Riviera South TH I/II": {
+    "id": 115,
+    "coordinates": {
+      "lat": 33.393,
+      "lng": -111.915
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Park Riviera South TH III/IV": {
+    "id": 116,
+    "coordinates": {
+      "lat": 33.394,
+      "lng": -111.916
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Park Riviera Townhouse": {
+    "id": 117,
+    "coordinates": {
+      "lat": 33.395,
+      "lng": -111.917
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Parke Tempe": {
+    "id": 118,
+    "coordinates": {
+      "lat": 33.377,
+      "lng": -111.946
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Parkside at the Galleria": {
+    "id": 119,
+    "coordinates": {
+      "lat": 33.383,
+      "lng": -111.913
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.383,
+            "lng": -111.913
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Parkview Gardens": {
+    "id": 120,
+    "coordinates": {
+      "lat": null,
+      "lng": null
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Parkview Hacienda": {
+    "id": 121,
+    "coordinates": {
+      "lat": 33.406,
+      "lng": -111.929
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Pecan Grove Estates II": {
+    "id": 122,
+    "coordinates": {
+      "lat": 33.374,
+      "lng": -111.943
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.964
+          },
+          {
+            "lat": 33.3785,
+            "lng": -111.964
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Pecan Grove Village II": {
+    "id": 123,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.94
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.942
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Pecan Grove Village III": {
+    "id": 124,
+    "coordinates": {
+      "lat": 33.377,
+      "lng": -111.942
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.942
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Pepperwood": {
+    "id": 125,
+    "coordinates": {
+      "lat": 33.374,
+      "lng": -111.918
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.374,
+            "lng": -111.918
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Pepperwood Townhomes": {
+    "id": 126,
+    "coordinates": {
+      "lat": 33.374,
+      "lng": -111.918
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.374,
+            "lng": -111.918
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Peterson Park": {
+    "id": 127,
+    "coordinates": {
+      "lat": null,
+      "lng": null
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Pheasant Ridge": {
+    "id": 128,
+    "coordinates": {
+      "lat": 33.365,
+      "lng": -111.925
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Premier Condominiums": {
+    "id": 129,
+    "coordinates": {
+      "lat": 33.38,
+      "lng": -111.93
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          },
+          {
+            "lat": 33.3785,
+            "lng": -111.942
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Presidential Estates": {
+    "id": 130,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.915
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Puerta Del Sol": {
+    "id": 131,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.92
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Questa Vida": {
+    "id": 132,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.925
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Raintree": {
+    "id": 133,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.922
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Rancho Tempe": {
+    "id": 134,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.93
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "River Run": {
+    "id": 135,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.918
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.385,
+            "lng": -111.918
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Round Valley": {
+    "id": 136,
+    "coordinates": {
+      "lat": 33.373,
+      "lng": -111.919
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.373,
+            "lng": -111.919
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Scudder Park West": {
+    "id": 137,
+    "coordinates": {
+      "lat": 33.37,
+      "lng": -111.9185
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Shalimar": {
+    "id": 138,
+    "coordinates": {
+      "lat": 33.3755,
+      "lng": -111.92
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Shalimar East": {
+    "id": 139,
+    "coordinates": {
+      "lat": 33.377,
+      "lng": -111.922
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Sierra Tempe": {
+    "id": 140,
+    "coordinates": {
+      "lat": 33.3795,
+      "lng": -111.9135
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Sierra Tempe Unit 4": {
+    "id": 141,
+    "coordinates": {
+      "lat": 33.384,
+      "lng": -111.917
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Solar Energy Synergy": {
+    "id": 142,
+    "coordinates": {
+      "lat": 33.3825,
+      "lng": -111.9105
+    },
+    "lewc_score": 2.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Southern Palms": {
+    "id": 143,
+    "coordinates": {
+      "lat": 33.379,
+      "lng": -111.913
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Southern Village Estates": {
+    "id": 144,
+    "coordinates": {
+      "lat": 33.3755,
+      "lng": -111.9145
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Springdale": {
+    "id": 145,
+    "coordinates": {
+      "lat": 33.372,
+      "lng": -111.916
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Springtree": {
+    "id": 146,
+    "coordinates": {
+      "lat": 33.3735,
+      "lng": -111.9145
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Stonegate": {
+    "id": 147,
+    "coordinates": {
+      "lat": 33.3745,
+      "lng": -111.9115
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Rural/Geneva": {
+    "id": 148,
+    "coordinates": {
+      "lat": 33.418,
+      "lng": -111.9265
+    },
+    "lewc_score": 5.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 9,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.421,
+            "lng": -111.9265
+          },
+          {
+            "lat": 33.418,
+            "lng": -111.922
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Sunburst Farms": {
+    "id": 149,
+    "coordinates": {
+      "lat": 33.355,
+      "lng": -111.942
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Superstition": {
+    "id": 150,
+    "coordinates": {
+      "lat": 33.405,
+      "lng": -111.895
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.395,
+            "lng": -111.895
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Tally Ho Farms": {
+    "id": 151,
+    "coordinates": {
+      "lat": 33.353,
+      "lng": -111.928
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Tally Ho Farms North": {
+    "id": 152,
+    "coordinates": {
+      "lat": 33.356,
+      "lng": -111.9285
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Tempe Gardens": {
+    "id": 153,
+    "coordinates": {
+      "lat": 33.401,
+      "lng": -111.931
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Tempe Gardens Townhomes": {
+    "id": 154,
+    "coordinates": {
+      "lat": 33.4015,
+      "lng": -111.9315
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Tempe Palms": {
+    "id": 155,
+    "coordinates": {
+      "lat": 33.398,
+      "lng": -111.935
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Tempe Royal Estates": {
+    "id": 156,
+    "coordinates": {
+      "lat": 33.399,
+      "lng": -111.938
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Tempe Royal Palms": {
+    "id": 157,
+    "coordinates": {
+      "lat": 33.397,
+      "lng": -111.936
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Tempe South Mountain": {
+    "id": 158,
+    "coordinates": {
+      "lat": 33.349,
+      "lng": -111.975
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Tempe Village": {
+    "id": 159,
+    "coordinates": {
+      "lat": 33.395,
+      "lng": -111.941
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.395,
+            "lng": -111.941
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Terra": {
+    "id": 160,
+    "coordinates": {
+      "lat": 33.415,
+      "lng": -111.915
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.415,
+            "lng": -111.915
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Terrace Walk": {
+    "id": 161,
+    "coordinates": {
+      "lat": 33.389,
+      "lng": -111.951
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.389,
+            "lng": -111.951
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Terramere": {
+    "id": 162,
+    "coordinates": {
+      "lat": 33.336,
+      "lng": -111.912
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "The Lofts at Orchidhouse": {
+    "id": 163,
+    "coordinates": {
+      "lat": 33.428,
+      "lng": -111.941
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 10,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.428,
+            "lng": -111.941
+          },
+          {
+            "lat": 33.426,
+            "lng": -111.941
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 3
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "The Meadows": {
+    "id": 164,
+    "coordinates": {
+      "lat": 33.361,
+      "lng": -111.961
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "The Vale": {
+    "id": 165,
+    "coordinates": {
+      "lat": 33.35,
+      "lng": -111.895
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.35,
+            "lng": -111.895
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "University Estates": {
+    "id": 166,
+    "coordinates": {
+      "lat": 33.416,
+      "lng": -111.921
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.418,
+            "lng": -111.9265
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "University Heights": {
+    "id": 167,
+    "coordinates": {
+      "lat": 33.421,
+      "lng": -111.928
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.418,
+            "lng": -111.9265
+          },
+          {
+            "lat": 33.421,
+            "lng": -111.933
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "University Park": {
+    "id": 168,
+    "coordinates": {
+      "lat": 33.418,
+      "lng": -111.935
+    },
+    "lewc_score": 5.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 9,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.418,
+            "lng": -111.935
+          },
+          {
+            "lat": 33.421,
+            "lng": -111.933
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 8
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "University Ranch": {
+    "id": 169,
+    "coordinates": {
+      "lat": 33.405,
+      "lng": -111.925
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "University Royal Garden Hms": {
+    "id": 170,
+    "coordinates": {
+      "lat": 33.408,
+      "lng": -111.932
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "University Shadows": {
+    "id": 171,
+    "coordinates": {
+      "lat": 33.409,
+      "lng": -111.919
+    },
+    "lewc_score": 5.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Victory Acres": {
+    "id": 172,
+    "coordinates": {
+      "lat": 33.391,
+      "lng": -111.91
+    },
+    "lewc_score": 5.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.906
+          },
+          {
+            "lat": 33.398,
+            "lng": -111.91
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 8
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Villa Patrician": {
+    "id": 173,
+    "coordinates": {
+      "lat": 33.376,
+      "lng": -111.905
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Village at Shalimar": {
+    "id": 174,
+    "coordinates": {
+      "lat": 33.375,
+      "lng": -111.921
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.375,
+            "lng": -111.921
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Villagio at Tempe": {
+    "id": 175,
+    "coordinates": {
+      "lat": 33.371,
+      "lng": -111.898
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.395,
+            "lng": -111.895
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Villas Las Palmas": {
+    "id": 176,
+    "coordinates": {
+      "lat": 33.378,
+      "lng": -111.901
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3785,
+            "lng": -111.899
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Villas Tempe": {
+    "id": 177,
+    "coordinates": {
+      "lat": 33.381,
+      "lng": -111.929
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.381,
+            "lng": -111.929
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Warner Estates": {
+    "id": 178,
+    "coordinates": {
+      "lat": 33.339,
+      "lng": -111.938
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Warner Ranch": {
+    "id": 179,
+    "coordinates": {
+      "lat": 33.345,
+      "lng": -111.951
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Warner Ranch Landing": {
+    "id": 180,
+    "coordinates": {
+      "lat": 33.342,
+      "lng": -111.954
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Warner Ranch Landing II": {
+    "id": 181,
+    "coordinates": {
+      "lat": 33.341,
+      "lng": -111.956
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Warner Ranch Manor I": {
+    "id": 182,
+    "coordinates": {
+      "lat": 33.348,
+      "lng": -111.948
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Warner Ranch Manor II": {
+    "id": 183,
+    "coordinates": {
+      "lat": 33.349,
+      "lng": -111.947
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Warner Ranch Phase II": {
+    "id": 184,
+    "coordinates": {
+      "lat": 33.346,
+      "lng": -111.958
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Warner Ranch Village": {
+    "id": 185,
+    "coordinates": {
+      "lat": 33.343,
+      "lng": -111.945
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Wilson Art & Garden": {
+    "id": 186,
+    "coordinates": {
+      "lat": 33.424,
+      "lng": -111.918
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.424,
+            "lng": -111.915
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Wingfoot": {
+    "id": 187,
+    "coordinates": {
+      "lat": 33.365,
+      "lng": -111.91
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Wood Park": {
+    "id": 188,
+    "coordinates": {
+      "lat": 33.398,
+      "lng": -111.899
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 5
+      }
+    }
+  },
+  "Corona Del Sol Estates": {
+    "id": 189,
+    "coordinates": {
+      "lat": 33.342,
+      "lng": -111.908
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 9
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Los Tesoros": {
+    "id": 190,
+    "coordinates": {
+      "lat": 33.34,
+      "lng": -111.89
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Mission Ridge": {
+    "id": 191,
+    "coordinates": {
+      "lat": 33.351,
+      "lng": -111.888
+    },
+    "lewc_score": 4.0,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.351,
+            "lng": -111.888
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Santo Tomas": {
+    "id": 192,
+    "coordinates": {
+      "lat": 33.359,
+      "lng": -111.905
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.346,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Ehrhardt Park": {
+    "id": 193,
+    "coordinates": {
+      "lat": 33.385,
+      "lng": -111.904
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Huntington Palms": {
+    "id": 194,
+    "coordinates": {
+      "lat": 33.364,
+      "lng": -111.914
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Warner Ranch Meadows": {
+    "id": 195,
+    "coordinates": {
+      "lat": 33.344,
+      "lng": -111.96
+    },
+    "lewc_score": 3.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.964
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "525 Town Lake": {
+    "id": 196,
+    "coordinates": {
+      "lat": 33.433,
+      "lng": -111.947
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.433,
+            "lng": -111.947
+          },
+          {
+            "lat": 33.435,
+            "lng": -111.951
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Sunset": {
+    "id": 197,
+    "coordinates": {
+      "lat": 33.408,
+      "lng": -111.96
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.968
+          },
+          {
+            "lat": 33.408,
+            "lng": -111.956
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Riverside": {
+    "id": 198,
+    "coordinates": {
+      "lat": 33.435,
+      "lng": -111.935
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.438,
+            "lng": -111.935
+          },
+          {
+            "lat": 33.435,
+            "lng": -111.928
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Maple Ash": {
+    "id": 199,
+    "coordinates": {
+      "lat": 33.424,
+      "lng": -111.944
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4255,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.418,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Broadmor": {
+    "id": 200,
+    "coordinates": {
+      "lat": 33.409,
+      "lng": -111.931
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "The Lakes": {
+    "id": 201,
+    "coordinates": {
+      "lat": 33.368,
+      "lng": -111.935
+    },
+    "lewc_score": 3.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 3,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "College Avenue Historic District": {
+    "id": 202,
+    "coordinates": {
+      "lat": 33.4195,
+      "lng": -111.9315
+    },
+    "lewc_score": 5.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.418,
+            "lng": -111.934
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Cory": {
+    "id": 203,
+    "coordinates": {
+      "lat": 33.404,
+      "lng": -111.944
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.408,
+            "lng": -111.947
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Downtown Tempe": {
+    "id": 204,
+    "coordinates": {
+      "lat": 33.4255,
+      "lng": -111.94
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 10,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4255,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.428,
+            "lng": -111.941
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 3
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Estrada Park": {
+    "id": 205,
+    "coordinates": {
+      "lat": 33.393,
+      "lng": -111.921
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Evergreen-Farmer Historic District": {
+    "id": 206,
+    "coordinates": {
+      "lat": 33.426,
+      "lng": -111.936
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4255,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.421,
+            "lng": -111.9265
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Harbor Village": {
+    "id": 207,
+    "coordinates": {
+      "lat": 33.366,
+      "lng": -111.934
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Kyrene-Superstition": {
+    "id": 208,
+    "coordinates": {
+      "lat": 33.4045,
+      "lng": -111.8955
+    },
+    "lewc_score": 5.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 9,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.395,
+            "lng": -111.895
+          },
+          {
+            "lat": 33.408,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "Laird": {
+    "id": 209,
+    "coordinates": {
+      "lat": 33.411,
+      "lng": -111.94
+    },
+    "lewc_score": 4.86,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Mitchell Park East": {
+    "id": 210,
+    "coordinates": {
+      "lat": 33.415,
+      "lng": -111.905
+    },
+    "lewc_score": 3.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 4,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Mitchell Park West": {
+    "id": 211,
+    "coordinates": {
+      "lat": 33.415,
+      "lng": -111.91
+    },
+    "lewc_score": 4.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 4
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.914
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Northshore": {
+    "id": 212,
+    "coordinates": {
+      "lat": 33.434,
+      "lng": -111.94
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.435,
+            "lng": -111.951
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Pueblo": {
+    "id": 213,
+    "coordinates": {
+      "lat": 33.355,
+      "lng": -111.965
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.964
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Ritter's Addition Historic District": {
+    "id": 214,
+    "coordinates": {
+      "lat": 33.424,
+      "lng": -111.933
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.421,
+            "lng": -111.933
+          },
+          {
+            "lat": 33.4255,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Roosevelt Historic District": {
+    "id": 215,
+    "coordinates": {
+      "lat": 33.427,
+      "lng": -111.928
+    },
+    "lewc_score": 5.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.421,
+            "lng": -111.9265
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 7
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Rural-University": {
+    "id": 216,
+    "coordinates": {
+      "lat": 33.42,
+      "lng": -111.926
+    },
+    "lewc_score": 5.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 9,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.421,
+            "lng": -111.9265
+          },
+          {
+            "lat": 33.418,
+            "lng": -111.922
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 8
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "Selle": {
+    "id": 217,
+    "coordinates": {
+      "lat": 33.394,
+      "lng": -111.958
+    },
+    "lewc_score": 4.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.964
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Downtown Tempe/Mill Avenue District": {
+    "id": 218,
+    "coordinates": {
+      "lat": 33.4255,
+      "lng": -111.94
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 10,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4255,
+            "lng": -111.94
+          },
+          {
+            "lat": 33.423,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Tempe Town Lake District": {
+    "id": 219,
+    "coordinates": {
+      "lat": 33.433,
+      "lng": -111.939
+    },
+    "lewc_score": 4.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.435,
+            "lng": -111.951
+          },
+          {
+            "lat": 33.433,
+            "lng": -111.935
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Novus Innovation Corridor": {
+    "id": 220,
+    "coordinates": {
+      "lat": 33.423,
+      "lng": -111.93
+    },
+    "lewc_score": 3.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 3
+      },
+      "heat_island_effect": {
+        "score": 5,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.421,
+            "lng": -111.933
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Papago Park Center": {
+    "id": 221,
+    "coordinates": {
+      "lat": 33.456,
+      "lng": -111.968
+    },
+    "lewc_score": 5.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.458,
+            "lng": -111.975
+          },
+          {
+            "lat": 33.46,
+            "lng": -111.967
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "ASU Research Park": {
+    "id": 222,
+    "coordinates": {
+      "lat": 33.344,
+      "lng": -111.89
+    },
+    "lewc_score": 3.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 2
+      },
+      "heat_island_effect": {
+        "score": 2,
+        "heat_island_coordinates": null
+      },
+      "heavy_rain": {
+        "score": 3
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 8
+      },
+      "dust_storms_haboob": {
+        "score": 6
+      }
+    }
+  },
+  "Smith Innovation Hub": {
+    "id": 223,
+    "coordinates": {
+      "lat": 33.4077,
+      "lng": -111.963
+    },
+    "lewc_score": 5.57,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 9,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.408,
+            "lng": -111.968
+          },
+          {
+            "lat": 33.391,
+            "lng": -111.964
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 8
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 3
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "Maker District": {
+    "id": 224,
+    "coordinates": {
+      "lat": 33.391,
+      "lng": -111.94
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 8
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.391,
+            "lng": -111.94
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 8
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Apache Boulevard Corridor": {
+    "id": 225,
+    "coordinates": {
+      "lat": 33.4145,
+      "lng": -111.914
+    },
+    "lewc_score": 5.29,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.4145,
+            "lng": -111.914
+          },
+          {
+            "lat": 33.4145,
+            "lng": -111.905
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 7
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 8
+      }
+    }
+  },
+  "Emerald Center": {
+    "id": 226,
+    "coordinates": {
+      "lat": 33.351,
+      "lng": -111.974
+    },
+    "lewc_score": 5.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 8,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.346,
+            "lng": -111.976
+          },
+          {
+            "lat": 33.363,
+            "lng": -111.976
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 4
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "Tempe Marketplace (Retail Hub)": {
+    "id": 227,
+    "coordinates": {
+      "lat": 33.433,
+      "lng": -111.8972
+    },
+    "lewc_score": 5.43,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 7
+      },
+      "heat_island_effect": {
+        "score": 9,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.433,
+            "lng": -111.8972
+          },
+          {
+            "lat": 33.438,
+            "lng": -111.901
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 6
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 9
+      }
+    }
+  },
+  "Kyrene Road Corridor (Suburban Office Park)": {
+    "id": 228,
+    "coordinates": {
+      "lat": 33.359,
+      "lng": -111.926
+    },
+    "lewc_score": 4.71,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 6
+      },
+      "heat_island_effect": {
+        "score": 7,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.363,
+            "lng": -111.926
+          },
+          {
+            "lat": 33.346,
+            "lng": -111.926
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 5
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 6
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  },
+  "Warner Courtyards (Professional Plaza)": {
+    "id": 229,
+    "coordinates": {
+      "lat": 33.3325,
+      "lng": -111.906
+    },
+    "lewc_score": 4.14,
+    "environmental_risks": {
+      "flash_floods": {
+        "score": 5
+      },
+      "heat_island_effect": {
+        "score": 6,
+        "heat_island_coordinates": [
+          {
+            "lat": 33.3325,
+            "lng": -111.906
+          }
+        ]
+      },
+      "heavy_rain": {
+        "score": 4
+      },
+      "snow": {
+        "score": 1
+      },
+      "earthquakes_disruptions": {
+        "score": 1
+      },
+      "drought_impact": {
+        "score": 5
+      },
+      "dust_storms_haboob": {
+        "score": 7
+      }
+    }
+  }
+}

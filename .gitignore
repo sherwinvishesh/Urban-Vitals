@@ -1,0 +1,27 @@
+# Node / Vite
+/frontend/node_modules
+/frontend/dist
+/frontend/dist-ssr
+/frontend/.pnpm-debug.log*
+/frontend/.vite/
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/lerna-debug.log*
+/frontend/*.local
+
+# Python
+/backend/__pycache__/
+/backend/venv/
+/backend/*.pyc
+/backend/.env
+
+# IDE and OS specific
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
