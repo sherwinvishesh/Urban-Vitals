@@ -294,7 +294,7 @@ useEffect(() => {
           }
         } catch (apiError) {
           console.error('API Error:', apiError);
-          setError('Could not connect to the backend API.');
+          setError('Could not connect to the backend API.Please ensure the backend server is running.');
         }
       });
 

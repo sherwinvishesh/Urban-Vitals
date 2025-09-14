@@ -22,7 +22,7 @@
   width: 90%;
   max-width: 500px;
   height: 80vh;
-  max-height: 600px;
+  max-height: 700px;
   background: rgba(10, 31, 27, 0.98);
   border: 1px solid rgba(52, 211, 153, 0.3);
   border-radius: 16px;
@@ -123,6 +123,79 @@
   transform: scale(1.1);
 }
 
+/* CO2 Tracker Styles */
+.co2-tracker {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(16, 185, 129, 0.15) 100%);
+  border-bottom: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 1rem 1.5rem;
+  animation: slideIn 0.5s ease;
+}
+
+.co2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.co2-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(10, 31, 27, 0.3);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  border-radius: 12px;
+  padding: 0.5rem 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.co2-stat:hover {
+  background: rgba(10, 31, 27, 0.5);
+  border-color: rgba(52, 211, 153, 0.4);
+  transform: translateY(-2px);
+}
+
+.co2-label {
+  font-size: 0.7rem;
+  color: #a7f3d0;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+.co2-value {
+  font-size: 0.9rem;
+  color: #34d399;
+  font-weight: 900;
+}
+
+.co2-explanation {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.co2-explanation small {
+  color: #86efac;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .chatbot-messages {
   flex: 1;
   padding: 1rem;
@@ -217,6 +290,11 @@
   opacity: 0.7;
   display: block;
   margin-top: 0.25rem;
+}
+
+.message-tokens {
+  color: #86efac;
+  font-weight: 600;
 }
 
 .typing-indicator {
@@ -356,6 +434,7 @@
     width: 95%;
     height: 85vh;
     border-radius: 12px;
+    max-height: 650px;
   }
 
   .chatbot-header {
@@ -364,6 +443,31 @@
 
   .chatbot-title h3 {
     font-size: 1rem;
+  }
+
+  .co2-tracker {
+    padding: 0.75rem 1rem;
+  }
+
+  .co2-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .co2-stat {
+    padding: 0.4rem 0.2rem;
+  }
+
+  .co2-label {
+    font-size: 0.65rem;
+  }
+
+  .co2-value {
+    font-size: 0.8rem;
+  }
+
+  .co2-explanation small {
+    font-size: 0.7rem;
   }
 
   .chatbot-messages {
@@ -392,5 +496,25 @@
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
+  }
+
+  /* Stack CO2 stats in single column on very small screens */
+  @media (max-width: 480px) {
+    .co2-stats {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.25rem;
+    }
+
+    .co2-stat {
+      padding: 0.3rem 0.1rem;
+    }
+
+    .co2-label {
+      font-size: 0.6rem;
+    }
+
+    .co2-value {
+      font-size: 0.75rem;
+    }
   }
 }

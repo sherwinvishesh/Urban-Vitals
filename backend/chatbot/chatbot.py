@@ -4,10 +4,11 @@ import requests
 from dotenv import load_dotenv
 from typing import Dict, List, Any, Optional
 from datetime import datetime
+import re
 
 class UrbanVitalsChatbot:
     def __init__(self):
-        """Initialize the Urban Vitals web chatbot with enhanced memory"""
+        """Initialize the Urban Vitals web chatbot with enhanced memory and CO2 tracking"""
         # Load environment variables
         load_dotenv()
         
@@ -18,7 +19,12 @@ class UrbanVitalsChatbot:
             "last_mentioned_neighborhoods": [],
             "last_discussed_topics": [],
             "user_preferences": {},
-            "session_facts": {}  # Store key facts from the conversation
+            "session_facts": {},  # Store key facts from the conversation
+            "co2_stats": {
+                "total_tokens": 0,
+                "total_savings_kg": 0.0,
+                "session_start": datetime.now()
+            }
         }
         
         # Initialize Tandemn model
@@ -32,6 +38,96 @@ class UrbanVitalsChatbot:
         self.lewc_data = None
         self.definitions_data = None
         self._load_data()
+        
+    def calculate_co2_savings(self, num_tokens: int, output_unit: str = 'kg') -> float:
+        """
+        Calculate CO2 savings from using Tandemn instead of commercial providers.
+        Based on the formula from CO2-calculation.md
+        
+        Args:
+            num_tokens (int): Number of tokens generated
+            output_unit (str): 'kg' for kilograms, 'g' for grams, 'mg' for milligrams
+        
+        Returns:
+            float: CO2 savings in specified unit
+        """
+        # Commercial provider parameters (using H100 GPUs)
+        commercial_power = 2.8  # kW (4× H100 at 0.7 kW each)
+        commercial_ci = 0.43    # kgCO2e/kWh (Azure data centers)
+        commercial_tps = 100    # tokens/second
+        embodied_co2 = 7000     # kgCO2e (4× H100 at 1750 kgCO2e each)
+        lifetime_hours = 43800  # hours (5 years)
+        
+        # Tandemn parameters (using L40 GPUs)
+        tandemn_power = 1.5     # kW (3× L40 at 0.5 kW each)
+        tandemn_ci = 0.15       # kgCO2e/kWh (N. California grid)
+        tandemn_tps = 30        # tokens/second
+        
+        # Calculate commercial emissions per token
+        commercial_operational = (commercial_power * commercial_ci) / commercial_tps
+        commercial_embodied = embodied_co2 / (commercial_tps * lifetime_hours)
+        commercial_total = commercial_operational + commercial_embodied
+        
+        # Calculate Tandemn emissions per token (no embodied carbon)
+        tandemn_total = (tandemn_power * tandemn_ci) / tandemn_tps
+        
+        # Convert to per token (divide by 3600 to convert seconds to hours)
+        savings_per_token = (commercial_total - tandemn_total) / 3600
+        
+        # Calculate total savings
+        total_savings = savings_per_token * num_tokens
+        
+        # Convert to requested unit
+        if output_unit.lower() == 'g':
+            total_savings *= 1000  # Convert kg to grams
+        elif output_unit.lower() == 'mg':
+            total_savings *= 1000000  # Convert kg to milligrams
+        
+        return total_savings
+
+    def estimate_tokens(self, text: str) -> int:
+        """
+        Estimate the number of tokens in a text string.
+        Rough approximation: 1 token ≈ 4 characters for English text
+        """
+        if not text:
+            return 0
+        # More sophisticated estimation considering word boundaries
+        words = len(text.split())
+        chars = len(text)
+        # Average of character-based and word-based estimation
+        char_based = chars / 4
+        word_based = words * 1.3  # Average 1.3 tokens per word
+        return int((char_based + word_based) / 2)
+
+    def update_co2_stats(self, user_tokens: int, bot_tokens: int):
+        """Update session CO2 statistics"""
+        total_new_tokens = user_tokens + bot_tokens
+        new_savings = self.calculate_co2_savings(total_new_tokens)
+        
+        self.conversation_context["co2_stats"]["total_tokens"] += total_new_tokens
+        self.conversation_context["co2_stats"]["total_savings_kg"] += new_savings
+
+    def get_co2_summary(self) -> Dict[str, Any]:
+        """Get current session CO2 summary"""
+        stats = self.conversation_context["co2_stats"]
+        session_duration = datetime.now() - stats["session_start"]
+        
+        return {
+            "total_tokens": stats["total_tokens"],
+            "total_savings_kg": stats["total_savings_kg"],
+            "session_duration_minutes": session_duration.total_seconds() / 60,
+            "savings_formatted": self.format_co2_savings(stats["total_savings_kg"])
+        }
+
+    def format_co2_savings(self, savings_kg: float) -> str:
+        """Format CO2 savings for display"""
+        if savings_kg < 0.001:
+            return f"{savings_kg * 1000000:.2f} mg"
+        elif savings_kg < 1:
+            return f"{savings_kg * 1000:.2f} g"
+        else:
+            return f"{savings_kg:.3f} kg"
         
     def _initialize_tandemn(self):
         """Initialize Tandemn AI model with enhanced memory instructions"""
@@ -170,6 +266,8 @@ class UrbanVitalsChatbot:
             topics.append("walkability")
         if "lewc" in user_lower or "environmental risk" in user_lower:
             topics.append("lewc_score")
+        if "co2" in user_lower or "carbon" in user_lower or "emissions" in user_lower:
+            topics.append("co2_savings")
         
         if topics:
             self.conversation_context["last_discussed_topics"] = topics
@@ -214,7 +312,7 @@ class UrbanVitalsChatbot:
         return resolved_message
 
     def _build_context_prompt(self, message: str, relevant_context: str) -> str:
-        """Build a comprehensive context prompt including conversation history"""
+        """Build a comprehensive context prompt including conversation history and CO2 info"""
         
         # Get recent conversation history
         recent_history = ""
@@ -241,9 +339,20 @@ class UrbanVitalsChatbot:
         if self.conversation_context["session_facts"]:
             context_info += f"Session facts: {json.dumps(self.conversation_context['session_facts'], indent=2)}\n"
         
+        # Add CO2 context
+        co2_summary = self.get_co2_summary()
+        context_info += f"\nCO2 Session Stats:\n"
+        context_info += f"- Total tokens processed: {co2_summary['total_tokens']}\n"
+        context_info += f"- CO2 savings: {co2_summary['savings_formatted']}\n"
+        context_info += f"- Session duration: {co2_summary['session_duration_minutes']:.1f} minutes\n"
+        
         # Check if the message is asking for definitions or explanations
         definition_keywords = ['what is', 'what does', 'define', 'meaning of', 'explain', 'definition']
         is_definition_query = any(keyword in message.lower() for keyword in definition_keywords)
+        
+        # Check if asking about CO2/carbon/emissions
+        co2_keywords = ['co2', 'carbon', 'emissions', 'footprint', 'savings', 'environment impact']
+        is_co2_query = any(keyword in message.lower() for keyword in co2_keywords)
         
         definitions_context = ""
         if is_definition_query and self.definitions_data:
@@ -252,15 +361,27 @@ Available Term Definitions:
 {json.dumps(self.definitions_data, indent=2)}
 """
         
+        co2_context = ""
+        if is_co2_query:
+            co2_context = f"""
+CO2 Calculation Information:
+- This chatbot uses Tandemn's eco-friendly AI infrastructure
+- Savings come from: refurbished hardware (avoiding embodied carbon) + green energy
+- Current session has saved: {co2_summary['savings_formatted']} of CO2 emissions
+- Formula: Commercial providers use new H100 GPUs with high embodied carbon, Tandemn uses refurbished L40 GPUs with negligible embodied carbon
+"""
+        
         prompt = f"""
 CONTEXT INSTRUCTIONS:
 - Maintain conversation continuity and remember what has been discussed
 - Use the conversation history and context to understand references like "it", "that neighborhood", etc.
 - The user's question may reference previously discussed neighborhoods or topics
+- If asked about CO2 savings or environmental impact, explain the benefits of using eco-friendly AI
 
 {recent_history}
 {context_info}
 {definitions_context}
+{co2_context}
 
 Current Neighborhood Data:
 {relevant_context if relevant_context else "General query - no specific neighborhood data"}
@@ -275,8 +396,11 @@ Please provide a helpful, contextual response that considers the entire conversa
         return prompt
 
     def get_response(self, message: str, context: Optional[Dict] = None) -> str:
-        """Generate a response with enhanced memory and context tracking"""
+        """Generate a response with enhanced memory and context tracking including CO2 calculations"""
         try:
+            # Estimate tokens for user message
+            user_tokens = self.estimate_tokens(message)
+            
             # Resolve pronouns before processing
             resolved_message = self._resolve_pronouns_and_references(message)
             
@@ -285,7 +409,8 @@ Please provide a helpful, contextual response that considers the entire conversa
                 "user": message,
                 "resolved_user": resolved_message,
                 "response": None,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
+                "user_tokens": user_tokens
             })
             
             # Handle empty messages
@@ -318,12 +443,20 @@ Please provide a helpful, contextual response that considers the entire conversa
             else:
                 response = self._get_enhanced_fallback_response(resolved_message, neighborhoods_data, selected_neighborhood)
             
+            # Estimate tokens for bot response
+            bot_tokens = self.estimate_tokens(response)
+            
+            # Update CO2 statistics
+            self.update_co2_stats(user_tokens, bot_tokens)
+            
             # Update conversation context
             self._update_conversation_context(resolved_message, response)
             
-            # Update conversation history with response
+            # Update conversation history with response and token counts
             if self.conversation_history:
                 self.conversation_history[-1]["response"] = response
+                self.conversation_history[-1]["bot_tokens"] = bot_tokens
+                self.conversation_history[-1]["co2_savings"] = self.calculate_co2_savings(user_tokens + bot_tokens)
             
             return response
                 
@@ -378,6 +511,9 @@ When a user refers to "it", "that neighborhood", "there", etc., use the conversa
 If you mention a neighborhood or answer a question about one, remember that for follow-up questions.
 Always consider the full conversation history when responding.
 
+You are powered by Tandemn's eco-friendly AI infrastructure that uses refurbished hardware and green energy.
+If asked about environmental impact, CO2 savings, or sustainability, mention how this conversation is helping save carbon emissions.
+
 Your primary goal is to answer questions using the specific JSON data provided with each user query.
 When asked about highest/lowest scores, analyze ALL neighborhoods and provide specific names and values.
 When comparing neighborhoods, provide specific numerical comparisons.
@@ -425,14 +561,19 @@ Keep responses concise and conversational for a web chat interface."""
             return self._get_enhanced_fallback_response(message, {}, None)
 
     def _get_enhanced_fallback_response(self, message: str, neighborhoods_data: Dict, selected_neighborhood: Dict) -> str:
-        """Enhanced fallback with context awareness"""
+        """Enhanced fallback with context awareness and CO2 info"""
         message_lower = message.lower().strip()
+        
+        # Handle CO2/carbon/emissions queries
+        if any(keyword in message_lower for keyword in ['co2', 'carbon', 'emissions', 'footprint', 'savings', 'environmental impact']):
+            co2_summary = self.get_co2_summary()
+            return f"🌱 Great question about environmental impact! This conversation has already saved {co2_summary['savings_formatted']} of CO2 emissions by using Tandemn's eco-friendly AI infrastructure instead of traditional commercial providers. We achieve this through refurbished hardware (avoiding embodied carbon from manufacturing) and green energy sources. Every token we process together helps reduce the carbon footprint of AI!"
         
         # Handle greetings
         if any(word in message_lower for word in ["hello", "hi", "hey", "greetings"]):
             if self.conversation_context["current_neighborhood"]:
                 return f"Hello! We were just discussing {self.conversation_context['current_neighborhood']}. What else would you like to know?"
-            return "Hello! I'm your Urban Vitals assistant. What would you like to know about Tempe's neighborhoods?"
+            return "Hello! I'm your Urban Vitals assistant powered by eco-friendly AI. What would you like to know about Tempe's neighborhoods?"
         
         # Handle contextual queries about current neighborhood
         current_neighborhood = self.conversation_context.get("current_neighborhood")
@@ -482,7 +623,7 @@ Keep responses concise and conversational for a web chat interface."""
         if any(phrase in message_lower for phrase in ["lowest green score", "worst green score", "bottom green score"]):
             return self._find_lowest_green_score(neighborhoods_data)
         
-        return "That's a great question, but I don't have that information right now."
+        return "That's a great question, but I don't have that information right now. Feel free to ask about neighborhoods, green scores, or our eco-friendly AI system!"
 
     def _handle_definition_query(self, message_lower: str) -> str:
         """Handle definition queries using the definitions data"""
@@ -691,17 +832,22 @@ Keep responses concise and conversational for a web chat interface."""
     
 
     def reset(self):
-        """Reset the conversation state"""
+        """Reset the conversation state and CO2 tracking"""
         self.conversation_history = []
         self.conversation_context = {
             "current_neighborhood": None,
             "last_mentioned_neighborhoods": [],
             "last_discussed_topics": [],
             "user_preferences": {},
-            "session_facts": {}
+            "session_facts": {},
+            "co2_stats": {
+                "total_tokens": 0,
+                "total_savings_kg": 0.0,
+                "session_start": datetime.now()
+            }
         }
         
-        print("Conversation state reset")
+        print("Conversation state and CO2 tracking reset")
 
     def __call__(self, message: str, context: Optional[Dict] = None) -> str:
         """Allow the chatbot to be called directly"""

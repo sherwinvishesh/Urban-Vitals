@@ -3,12 +3,65 @@ import axios from 'axios';
 import { API_BASE_URL } from '../config';
 import './Chatbot.css';
 
+// CO2 calculation function based on your formula
+function calculateCO2Savings(numTokens, outputUnit = 'kg') {
+  // Commercial provider parameters (using H100 GPUs)
+  const commercial_power = 2.8;  // kW (4× H100 at 0.7 kW each)
+  const commercial_ci = 0.43;    // kgCO2e/kWh (Azure data centers)
+  const commercial_tps = 100;    // tokens/second
+  const embodied_co2 = 7000;     // kgCO2e (4× H100 at 1750 kgCO2e each)
+  const lifetime_hours = 43800;  // hours (5 years)
+  
+  // Tandemn parameters (using L40 GPUs)
+  const tandemn_power = 1.5;     // kW (3× L40 at 0.5 kW each)
+  const tandemn_ci = 0.15;       // kgCO2e/kWh (N. California grid)
+  const tandemn_tps = 30;        // tokens/second
+  
+  // Calculate commercial emissions per token
+  const commercial_operational = (commercial_power * commercial_ci) / commercial_tps;
+  const commercial_embodied = embodied_co2 / (commercial_tps * lifetime_hours);
+  const commercial_total = commercial_operational + commercial_embodied;
+  
+  // Calculate Tandemn emissions per token (no embodied carbon)
+  const tandemn_total = (tandemn_power * tandemn_ci) / tandemn_tps;
+  
+  // Convert to per token (divide by 3600 to convert seconds to hours)
+  const savings_per_token = (commercial_total - tandemn_total) / 3600;
+  
+  // Calculate total savings
+  let total_savings = savings_per_token * numTokens;
+  
+  // Convert to requested unit
+  if (outputUnit.toLowerCase() === 'g') {
+    total_savings *= 1000; // Convert kg to grams
+  } else if (outputUnit.toLowerCase() === 'mg') {
+    total_savings *= 1000000; // Convert kg to milligrams
+  }
+  
+  return total_savings;
+}
+
+// Estimate tokens in text (rough approximation: 1 token ≈ 4 characters)
+function estimateTokens(text) {
+  if (!text) return 0;
+  return Math.ceil(text.length / 4);
+}
+
 function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [chatbotAvailable, setChatbotAvailable] = useState(true);
+  
+  // CO2 tracking state
+  const [sessionStats, setSessionStats] = useState({
+    totalTokens: 0,
+    totalSavingsKg: 0,
+    totalMessages: 0,
+    sessionStartTime: new Date()
+  });
+  
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -26,6 +79,18 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
     checkChatbotStatus();
   }, []);
 
+  // Reset session stats when component mounts
+  useEffect(() => {
+    if (isVisible) {
+      setSessionStats({
+        totalTokens: 0,
+        totalSavingsKg: 0,
+        totalMessages: 0,
+        sessionStartTime: new Date()
+      });
+    }
+  }, [isVisible]);
+
   // Add welcome message when chatbot opens
   useEffect(() => {
     if (isVisible && messages.length === 0) {
@@ -37,7 +102,8 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
         id: Date.now(),
         text: welcomeMessage,
         isBot: true,
-        timestamp: new Date()
+        timestamp: new Date(),
+        tokens: estimateTokens(welcomeMessage)
       }]);
     }
   }, [isVisible, selectedNeighborhood]);
@@ -57,6 +123,19 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
       console.error('Failed to check chatbot status:', error);
       setChatbotAvailable(false);
     }
+  };
+
+  // Update session stats
+  const updateSessionStats = (userTokens, botTokens) => {
+    const totalNewTokens = userTokens + botTokens;
+    const newSavings = calculateCO2Savings(totalNewTokens, 'kg');
+    
+    setSessionStats(prev => ({
+      ...prev,
+      totalTokens: prev.totalTokens + totalNewTokens,
+      totalSavingsKg: prev.totalSavingsKg + newSavings,
+      totalMessages: prev.totalMessages + 1
+    }));
   };
 
   // Function to convert markdown-style formatting to HTML
@@ -91,11 +170,13 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
       return;
     }
 
+    const userTokens = estimateTokens(inputMessage.trim());
     const userMessage = {
       id: Date.now(),
       text: inputMessage.trim(),
       isBot: false,
-      timestamp: new Date()
+      timestamp: new Date(),
+      tokens: userTokens
     };
 
     setMessages(prev => [...prev, userMessage]);
@@ -112,13 +193,20 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
       setIsTyping(false);
       
       if (response.data.success) {
+        const botTokens = estimateTokens(response.data.response);
         const botMessage = {
           id: Date.now() + 1,
           text: response.data.response,
           isBot: true,
-          timestamp: new Date()
+          timestamp: new Date(),
+          tokens: botTokens
         };
+        
         setMessages(prev => [...prev, botMessage]);
+        
+        // Update CO2 stats
+        updateSessionStats(userTokens, botTokens);
+        
       } else {
         addErrorMessage(response.data.error || "Sorry, I couldn't process your request.");
       }
@@ -132,12 +220,14 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
   };
 
   const addErrorMessage = (errorText) => {
+    const errorTokens = estimateTokens(errorText);
     const errorMessage = {
       id: Date.now(),
       text: errorText,
       isBot: true,
       isError: true,
-      timestamp: new Date()
+      timestamp: new Date(),
+      tokens: errorTokens
     };
     setMessages(prev => [...prev, errorMessage]);
   };
@@ -146,13 +236,25 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
     try {
       await axios.post(`${API_BASE_URL}/api/chatbot/reset`);
       setMessages([]);
+      
+      // Reset CO2 stats
+      setSessionStats({
+        totalTokens: 0,
+        totalSavingsKg: 0,
+        totalMessages: 0,
+        sessionStartTime: new Date()
+      });
+      
       // Re-add welcome message
       setTimeout(() => {
+        const welcomeText = "Chat reset! How can I help you with Urban Vitals data?";
+        const welcomeTokens = estimateTokens(welcomeText);
         const welcomeMessage = {
           id: Date.now(),
-          text: "Chat reset! How can I help you with Urban Vitals data?",
+          text: welcomeText,
           isBot: true,
-          timestamp: new Date()
+          timestamp: new Date(),
+          tokens: welcomeTokens
         };
         setMessages([welcomeMessage]);
       }, 100);
@@ -167,6 +269,24 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
       minute: '2-digit',
       hour12: true 
     });
+  };
+
+  const formatCO2Savings = (savingsKg) => {
+    if (savingsKg < 0.001) {
+      return `${(savingsKg * 1000000).toFixed(2)} mg`; // milligrams
+    } else if (savingsKg < 1) {
+      return `${(savingsKg * 1000).toFixed(2)} g`; // grams
+    } else {
+      return `${savingsKg.toFixed(3)} kg`; // kilograms
+    }
+  };
+
+  const getSessionDuration = () => {
+    const now = new Date();
+    const diffMs = now - sessionStats.sessionStartTime;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffSecs = Math.floor((diffMs % 60000) / 1000);
+    return `${diffMins}m ${diffSecs}s`;
   };
 
   const suggestedQuestions = [
@@ -207,6 +327,31 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
           </div>
         </div>
 
+        {/* CO2 Savings Display */}
+        <div className="co2-tracker">
+          <div className="co2-stats">
+            <div className="co2-stat">
+              <span className="co2-label">🌱 CO₂ Saved</span>
+              <span className="co2-value">{formatCO2Savings(sessionStats.totalSavingsKg)}</span>
+            </div>
+            <div className="co2-stat">
+              <span className="co2-label">📝 Messages</span>
+              <span className="co2-value">{sessionStats.totalMessages}</span>
+            </div>
+            <div className="co2-stat">
+              <span className="co2-label">🎯 Tokens</span>
+              <span className="co2-value">{sessionStats.totalTokens.toLocaleString()}</span>
+            </div>
+            <div className="co2-stat">
+              <span className="co2-label">⏱️ Session</span>
+              <span className="co2-value">{getSessionDuration()}</span>
+            </div>
+          </div>
+          <div className="co2-explanation">
+            <small>💡 By using Tandemn's eco-friendly AI instead of commercial providers, you're saving CO₂ through refurbished hardware and green energy!</small>
+          </div>
+        </div>
+
         <div className="chatbot-messages">
           {messages.map((message) => (
             <div
@@ -224,7 +369,12 @@ function Chatbot({ selectedNeighborhood, onClose, isVisible }) {
                 ) : (
                   <p className="message-text">{message.text}</p>
                 )}
-                <span className="message-time">{formatTime(message.timestamp)}</span>
+                <span className="message-time">
+                  {formatTime(message.timestamp)}
+                  {message.tokens && (
+                    <span className="message-tokens"> • {message.tokens} tokens</span>
+                  )}
+                </span>
               </div>
             </div>
           ))}
