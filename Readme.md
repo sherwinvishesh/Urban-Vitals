@@ -8,7 +8,13 @@ This application is used to visualize, analyze, and simulate neighborhood enviro
 This project utilizes React frontend and a Python (FastAPI) backend.
 
 # Goals
-The purpose of this application is to collect data stats.
+The purpose of this application is to collect data stats and determine the rating of the neighborhood based on multiple factors. After utilizing the data, we offer a Chatbot feature that enables advice on how to change the sustainability to make it more environmentally friendly or general questions like what certain functions or abbreviations are called.
+
+# Strategy
+We started by hardcoding the data first, then created a development tool that collects data using AI. After the AI collects the data, it transforms them into JSON. After it completes JSON, it then reacts with a fast API using React causing us to view it in production.
+
+# Links
+Slides: https://www.canva.com/design/DAGy4SSxHck/lh7Hnh_OaOkHMOMoMWLgZg/edit?utm_content=DAGy4SSxHck&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 -----
 
