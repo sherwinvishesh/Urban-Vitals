@@ -1,8 +1,14 @@
 
 
 # Urban Vitals
+By: Sherwin Vishesh Jathanna, Divyam Kataria, Vivien Lim
 
-An application to visualize, analyze, and simulate neighborhood environmental and infrastructure data. This project consists of a React frontend and a Python (FastAPI) backend.
+# About
+This application is used to visualize, analyze, and simulate neighborhood environmental and infrastructure data using factors like safety, air quality, accessibility, and many more.
+This project utilizes React frontend and a Python (FastAPI) backend.
+
+# Goals
+The purpose of this application is to collect data stats.
 
 -----
 

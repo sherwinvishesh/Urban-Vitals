@@ -1,7 +1,6 @@
 import os
 import json
 import requests
-import google.generativeai as genai
 from dotenv import load_dotenv
 from typing import Dict, List, Any, Optional
 from datetime import datetime
@@ -22,10 +21,11 @@ class UrbanVitalsChatbot:
             "session_facts": {}  # Store key facts from the conversation
         }
         
-        # Initialize Gemini model
+        # Initialize Tandemn model
         self.model = None
-        self.chat = None
-        self._initialize_gemini()
+        self.tandemn_api_key = None
+        self.tandemn_endpoint = "https://api.tandemn.com/api/v1/chat/completions"
+        self._initialize_tandemn()
         
         # Load static data
         self.refined_data = None
@@ -33,45 +33,44 @@ class UrbanVitalsChatbot:
         self.definitions_data = None
         self._load_data()
         
-    def _initialize_gemini(self):
-        """Initialize Google Gemini AI model with enhanced memory instructions"""
-        google_api_key = os.getenv("GOOGLE_API_KEY")
+    def _initialize_tandemn(self):
+        """Initialize Tandemn AI model with enhanced memory instructions"""
+        tandemn_api_key = os.getenv("TANDEMN_API_KEY")
         
-        if not google_api_key:
-            print("Warning: GOOGLE_API_KEY environment variable not set. Chatbot will use fallback responses.")
+        if not tandemn_api_key:
+            print("Warning: TANDEMN_API_KEY environment variable not set. Chatbot will use fallback responses.")
             return
         
         try:
-            genai.configure(api_key=google_api_key)
-            self.model = genai.GenerativeModel('gemini-1.5-flash-latest')
+            self.tandemn_api_key = tandemn_api_key
+            self.model = "casperhansen/deepseek-r1-distill-llama-70b-awq"
             
-            system_prompt = """
-            You are an expert concierge for the city of Tempe, Arizona. Your tone should be friendly, professional, and natural.
+            # Test the connection with a simple request
+            headers = {
+                "Authorization": f"Bearer {self.tandemn_api_key}",
+                "Content-Type": "application/json"
+            }
             
-            CRITICAL MEMORY INSTRUCTIONS:
-            - You MUST remember and maintain context throughout the conversation
-            - When a user refers to "it", "that neighborhood", "there", etc., use the conversation context to understand what they're referring to
-            - If you mention a neighborhood or answer a question about one, remember that for follow-up questions
-            - Always consider the full conversation history when responding
-            - If unclear about a pronoun reference, ask for clarification rather than saying you don't have information
+            test_data = {
+                "model": self.model,
+                "messages": [{"role": "user", "content": "Hello"}],
+                "max_completion_tokens": 10
+            }
             
-            Your primary goal is to answer questions using the specific JSON data provided with each user query.
-            When asked about highest/lowest scores, analyze ALL neighborhoods and provide specific names and values.
-            When comparing neighborhoods, provide specific numerical comparisons.
-            When explaining scores, break down the components that contribute to the score.
+            response = requests.post(self.tandemn_endpoint, headers=headers, json=test_data, timeout=10)
             
-            Keep responses concise and conversational for a web chat interface.
-            """
-            
-            # Don't start a fresh chat each time - we'll manage the conversation history manually
-            self.chat = self.model.start_chat(history=[])
-            
-            print("Gemini model initialized successfully")
-            
+            if response.status_code == 200:
+                print("Tandemn model configured successfully")
+            else:
+                print(f"Tandemn connection test failed with status: {response.status_code}")
+                print(f"Response: {response.text}")
+                self.model = None
+                self.tandemn_api_key = None
+                
         except Exception as e:
-            print(f"Failed to initialize Gemini: {e}")
+            print(f"Failed to initialize Tandemn: {e}")
             self.model = None
-            self.chat = None
+            self.tandemn_api_key = None
     
     def _load_data(self):
         """Load neighborhood data from JSON files"""
@@ -314,8 +313,8 @@ Please provide a helpful, contextual response that considers the entire conversa
             )
             
             # Generate response
-            if self.chat:
-                response = self._get_gemini_response(resolved_message, relevant_context)
+            if self.tandemn_api_key and self.model:
+                response = self._get_tandemn_response(resolved_message, relevant_context)
             else:
                 response = self._get_enhanced_fallback_response(resolved_message, neighborhoods_data, selected_neighborhood)
             
@@ -356,19 +355,73 @@ Please provide a helpful, contextual response that considers the entire conversa
         
         return converted
 
-    def _get_gemini_response(self, message: str, relevant_context: str) -> str:
-        """Get response from Gemini AI model with full context"""
+    def _get_tandemn_response(self, message: str, relevant_context: str) -> str:
+        """Get response from Tandemn API with full context"""
         try:
             # Build comprehensive context prompt
             context_prompt = self._build_context_prompt(message, relevant_context)
             
-            # Send to Gemini
-            response = self.chat.send_message(context_prompt)
+            # Prepare the request for Tandemn API
+            headers = {
+                "Authorization": f"Bearer {self.tandemn_api_key}",
+                "Content-Type": "application/json"
+            }
             
-            return response.text
+            # Format messages for Tandemn API - simplified to avoid potential issues
+            messages = [
+                {
+                    "role": "system",
+                    "content": """You are an expert concierge for the city of Tempe, Arizona. Your tone should be friendly, professional, and natural.
+
+You MUST remember and maintain context throughout the conversation.
+When a user refers to "it", "that neighborhood", "there", etc., use the conversation context to understand what they're referring to.
+If you mention a neighborhood or answer a question about one, remember that for follow-up questions.
+Always consider the full conversation history when responding.
+
+Your primary goal is to answer questions using the specific JSON data provided with each user query.
+When asked about highest/lowest scores, analyze ALL neighborhoods and provide specific names and values.
+When comparing neighborhoods, provide specific numerical comparisons.
+When explaining scores, break down the components that contribute to the score.
+
+Keep responses concise and conversational for a web chat interface."""
+                },
+                {
+                    "role": "user",
+                    "content": f"Context: {relevant_context}\n\nUser Question: {message}"
+                }
+            ]
             
+            data = {
+                "model": self.model,
+                "messages": messages,
+                "temperature": 0.7,
+                "max_completion_tokens": 1000,
+                "stream": False
+            }
+            
+            # Send to Tandemn with timeout
+            response = requests.post(self.tandemn_endpoint, headers=headers, json=data, timeout=30)
+            
+            # Check for successful response
+            if response.status_code == 200:
+                response_data = response.json()
+                if 'choices' in response_data and len(response_data['choices']) > 0:
+                    return response_data['choices'][0]['message']['content']
+                else:
+                    print(f"Unexpected response format: {response_data}")
+                    return self._get_enhanced_fallback_response(message, {}, None)
+            else:
+                print(f"Tandemn API error: {response.status_code} - {response.text}")
+                return self._get_enhanced_fallback_response(message, {}, None)
+            
+        except requests.exceptions.Timeout:
+            print("Tandemn API request timed out")
+            return self._get_enhanced_fallback_response(message, {}, None)
+        except requests.exceptions.RequestException as e:
+            print(f"Tandemn API request error: {e}")
+            return self._get_enhanced_fallback_response(message, {}, None)
         except Exception as e:
-            print(f"Error getting Gemini response: {e}")
+            print(f"Error getting Tandemn response: {e}")
             return self._get_enhanced_fallback_response(message, {}, None)
 
     def _get_enhanced_fallback_response(self, message: str, neighborhoods_data: Dict, selected_neighborhood: Dict) -> str:
@@ -635,6 +688,7 @@ Please provide a helpful, contextual response that considers the entire conversa
         }
         
         return mapping.get(code, "unknown conditions")
+    
 
     def reset(self):
         """Reset the conversation state"""
@@ -647,12 +701,7 @@ Please provide a helpful, contextual response that considers the entire conversa
             "session_facts": {}
         }
         
-        # Reset Gemini chat if available
-        if self.model:
-            try:
-                self.chat = self.model.start_chat(history=[])
-            except Exception as e:
-                print(f"Error resetting Gemini chat: {e}")
+        print("Conversation state reset")
 
     def __call__(self, message: str, context: Optional[Dict] = None) -> str:
         """Allow the chatbot to be called directly"""

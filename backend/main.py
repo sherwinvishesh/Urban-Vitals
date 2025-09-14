@@ -7,10 +7,10 @@ import sys
 from pathlib import Path
 
 # Add import for the chatbot
-sys.path.append(str(Path(__file__).parent / "chatbot"))
+sys.path.append(str(Path(__file__).parent / "chatbot")) #handle error
 
 try:
-    from terminal_chatbot import UrbanVitalsChatbot  # Adjust import based on your chatbot class name
+    from chatbot import UrbanVitalsChatbot  #handle error
 except ImportError:
     print("Warning: Chatbot module not found. Chatbot functionality will be disabled.")
     UrbanVitalsChatbot = None
