@@ -1,5 +1,6 @@
 # CO2 Savings Calculation for Tandemn vs. Commercial Providers
-
+> ⚠️ Warning: Theoretical Values
+> Please note that the CO2 savings calculations provided are based on theoretical models and assumptions. The actual environmental impact may vary significantly based on real-world conditions and specific implementations.
 ## Formula Derivation
 
 ### 1. Operational Emissions Calculation
